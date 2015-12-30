@@ -152,7 +152,7 @@
             'height': '100%',
             'position': 'fixed',
             'top': 0,
-            'right': '0px',
+            'left': '0px',
             'bottom': '0px',
             'width': '86px',
             'z-index': 999
