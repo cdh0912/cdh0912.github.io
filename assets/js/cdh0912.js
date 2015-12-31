@@ -29,15 +29,16 @@ $(window).load(function(){
 	
 	//화면 여백div 생성1
 	$(".boundarySpace").append("<div class='topSpace'></div><div class='leftSpace'></div><div class='rightSpace'></div><div class='bottomSpace'></div>"
-						+	   "<div class='rightShadow'></div><div class='bottomShadow'></div>");
+							+  "<div class='rightShadow'></div><div class='bottomShadow'></div>");
 	
 	//화면 여백div 생성2
 	$(".slideSpace").append("<div class='topSpace'></div><div class='centerSpace'></div><div class='leftSpace'></div><div class='rightSpace'></div><div class='bottomSpace'></div>"
 						+	"<div class='rightShadow'></div><div class='centerShadow'></div><div class='bottomShadowL'></div><div class='bottomShadowR'></div>");
 	
 
-	//페이지 로드 시 화살표에 클래스(방향) 부여
-	$(".fp-next").addClass("ArrowRight");
+	//페이지 로드 시 화살표에 class 주고, text 추가
+	$(".fp-next").addClass("arrowRight").after("<span class='arrowText1'>View<br>detail</span>" +
+												"<span class='arrowText2'>Go<br>back</span>");
 	
 	var arrow1 = $("#section1 .fp-next");
 	var arrow2 = $("#section2 .fp-next");
@@ -58,10 +59,37 @@ $(window).load(function(){
 	arrow1.on("click", function() {
 		angle1 = angle1 + 180;
 		$(this).css("-webkit-transform", "rotate(" + angle1 + "deg)");
+		$(this).addClass("");
 	})
 	arrow2.on("click", function() {
 		angle2 = angle2 + 180;
 		$(this).css("-webkit-transform", "rotate(" + angle2 + "deg)");
 	})
+	
+	//화살표 마우스오버 시 텍스트 변경
+	$("#section1 .fp-next").hover( function() {
+		var arrowText;
+		if( $("#section1 .fp-slidesNav a").first().hasClass("active")) {
+			arrowText = $("#section1 .arrowText1");
+		} else {
+			arrowText = $("#section1 .arrowText2");
+		};
+		arrowText.stop(false, false).animate({
+			width:"toggle",
+			opacity:"toggle"
+		},250);
+	});
+	$("#section2 .fp-next").hover( function() {
+		var arrowText;
+		if( $("#section2 .fp-slidesNav a").first().hasClass("active")) {
+			arrowText = $("#section2 .arrowText1");
+		} else {
+			arrowText = $("#section2 .arrowText2");
+		};
+		arrowText.stop(false, false).animate({
+            width:"toggle",
+            opacity:"toggle"
+        },250);
+	});
 	
 });
