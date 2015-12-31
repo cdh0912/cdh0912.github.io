@@ -1,255 +1,129 @@
-<<<<<<< HEAD:index.html
 <!DOCTYPE html>
-<html>
-	<head>
-    	<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    	<title>Dongho Jo | Personal record page</title>
-		<meta name="theme-color" content="#db2525">
-		<!-- CSS -->
-		<link rel="icon" href="assets/imgs/favicon.ico" type="image/png" />
-		<link rel="icon" sizes="192x192" href="assets/imgs/favicon1.png"/>
-		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
-		<link rel="stylesheet" href="assets/styles/style.css">
-		<!-- JS -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.alton.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.cdh0912.js"></script>
-		<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
-		<script src="//use.typekit.net/nka7dai.js"></script>
-		<script type="text/javascript">
-			Typekit.load(); //어도비 폰트
-		</script>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-	</head>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>DongHo | Personal records</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage full-screen navigation and sections control menu." />
+	<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,navigation,control arrows, dots" />
+	<meta name="Resource-type" content="Document" />
 
-	<body class="pageWrapper">
-	 	
-	 	
- 	<div class="right-space"></div>
- 	<div class="left-space"></div>
- 	<div class="top-space"></div>
- 	<div class="bottom-space"></div>
-<!--<div class="horizon-prev"><img src="assets/imgs/l-arrow.png"></div>
-	<div class="horizon-next"><img src="assets/imgs/r-arrow.png"></div> -->
-	 	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/styles/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+	<style>
+	h1{
+		font-size: 5em;
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+	}
+	.intro p{
+		color: #fff;
+	}
+
+	.section{
+		text-align:center;
+	}
+
+	.controlArrow.prev {
+		left: 55px;
+	}
+	.controlArrow.next{
+		right: 55px;
+	}
+
+	</style>
+
+	<!-- JS -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!--<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script> -->
+	<script type="text/javascript" src="assets/js/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="assets/js/cdh0912.js"></script>
+	<script src="//use.typekit.net/nka7dai.js"></script>
+	<script type="text/javascript">
+		Typekit.load(); //어도비 폰트
+
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
+				sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C', 'rgb(250,231,199)'],
+				navigation: true,
+				slidesNavigation: true,
+				navigationPosition: 'left',
+				navigationTooltips: ['Intro', 'DreamCatcher', 'Moado', 'last page']
+			});
+		});
+	</script>
+
+</head>
+
+<body>
+
+	<div id="fullpage">
+<!------------------------------------------------------------------------------------->
 	
-		<!-- Modal -->
-		<section id="modalArea"></section>
-		<!-- /.modal -->
-	 	
-		<section class="pane-container">
+		<div class="section " id="section0">
+			<div class="boundarySpace"></div>
+			<div class="intro">
+				<h1>introduce</h1>
+				<p>intro sections</p>
+			</div>
+		</div>
+	
+<!----------------------------------------------------------------------------------------->
+	
+		<div class="section" id="section1">
+		    <div class="slide" id="slide1">
+				<div class="slideSpace"></div>
+				<div class="clickImg">
+					<p>Click me</p>
+					<img src="assets/imgs/click-white.png">
+				</div>
+				<div class="intro">
+					<h1>dreamcatcher</h1>
+					<p>dreamcatcher dreamcatcher dreamcatcher dreamcatcher</p>
+				</div>
+			</div>
+		    <div class="slide" id="slide2" style="background:#B0A5DD">
+				<div class="slideSpace"></div>
+				<h1>dreamcatcher detail</h1>
+			</div>
+		</div>
 		
-			<div class="pane paneOne">
-				<div class="content-container">
-					<div class="wrapper lightText">
-						<div class="" id="section-section2">
-							<h1 style="color:#fff; text-align:center">jQuery horizonScroll.js Example</h1>
-						</div>
-					</div>
+<!----------------------------------------------------------------------------------------->
+		
+		<div class="section" id="section2">
+		    <div class="slide" id="slide1">
+				<div class="slideSpace"></div>
+				<div class="clickImg">
+					<p>Click me</p>
+					<img src="assets/imgs/click-white.png">
+				</div>
+				<div class="intro">
+					<h1>Moado</h1>
+					<p>Moado Moado Moado Moado Moado </p>
 				</div>
 			</div>
-			
-			
-			
-			
-			<div class="pane paneTwo">
-				<div class="content-container" style="background-image: url(assets/imgs/blurred-bg.jpg); background-size: cover;">
-					<div class="wrapper lightText">
-						<div class="content right">
-							<h1>100% Full-Screen Scrolling.</h1>
-							<p>Make your web experience an impactful one with full-screen scrolling. Alton is great for presenting: galleries of work; features & benefits of software or services; or really anything else you can put your mind to.</p>
-							<button class="btn btn-primary" data-toggle="modal" data-target="#DreamCatcher">Trigger 111111Modal in iFrame</button>
-						</div>
-						<div class="image-container left">
-							<img src="assets/imgs/screen-graphic.svg" />
-						</div>
-					</div>
-				</div>
+		    <div class="slide" id="slide2" style="background:darkgrey">
+				<div class="slideSpace"></div>
+				<h1>Moado detail</h1>
 			</div>
-			
-			
-			
-			
-			<div class="pane paneThree">
-				<div class="content-container">
-					<div class="wrapper darkText">
-						<div class="content left">
-							<h1>Multiple Options Out Of The Box.</h1>
-							<p>You can apply Alton to all parent containers, as we’ve done here. Plus, you can choose to only apply it to the hero section using <a href="/alton/heroscroll">HeroScroll</a>, or use a nifty feature we built in called <a href="/alton/bookend">Bookend</a> to allow for independent starting & finishing containers. Plus, the whole plugin is easy to implement, lightweight, and has fallbacks for mobile.</p>
-							<button class="btn btn-primary" data-toggle="modal" data-target="#Moado">Trigger 222222Modal in iFrame</button>
-						</div>
-						<div class="image-container right">
-							<img src="assets/imgs/options-graphic.svg" />
-						</div>
-					</div>
-				</div>
+		</div>
+		
+<!----------------------------------------------------------------------------------------->
+		
+		<div class="section" id="section3">
+			<div class="boundarySpace"></div>
+			<div class="intro">
+				<h1>Profile with photo</h1>
 			</div>
-			
-			
-			
-			
-			<div class="pane paneFour">
-				<div class="content-container">
-					<div class="wrapper lightText">
-						<div class="content center">
-							<h1>Download Links</h1>
-							<a href="https://github.com/paper-leaf/alton/" target="_blank">GitHub</a>
-							<!-- Need Download Link -->
-							<a href="https://github.com/paper-leaf/alton/releases/download/1.2.0/alton.compressed.zip">Download</a>
-							<a href="http://paper-leaf.com" target="_blank">Paper Leaf</a>
-							<div class="tutLinks">
-								<a href="http://demo.paper-leaf.com/alton/heroscroll">
-									← View HeroScroll Demo
-								</a>
-								<!-- Need Tutorial Link -->
-								<a href="http://paper-leaf.com/alton-jquery-scroll-jacking-plugin">
-									Back to Tutorial
-								</a>
-								<a href="http://demo.paper-leaf.com/alton/bookend">
-									View Bookend Demo →
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-		</section>
-    </body>
-
-	<script>
-		(function($) {
-			$(document).ready(function() {
-			    $(document).alton({
-			        fullSlideContainer: 'pane-container',
-			        singleSlideClass: 'pane',
-			        useSlideNumbers: true,
-			        slideNumbersBorderColor: '#fff',
-			        slideNumbersColor: 'transparent',
-			        bodyContainer: 'pageWrapper',
-			    });
-			});
-		})(jQuery);
-	</script>
-
-	</body>
+		</div>
+		
+<!----------------------------------------------------------------------------------------->
+		
+	</div>
+</body>
 </html>
-=======
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
-	<head>
-    	<meta charset="utf-8">
-		<meta name="Author" content="Paper Leaf Design | www.paper-leaf.com" />
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    	<title>Alton | jQuery Scrolling Plugin</title>
-		<meta name="theme-color" content="#db2525">
-		<link rel="icon" href="assets/imgs/favicon.ico" type="image/png" />
-		<link rel="icon" sizes="192x192" href="assets/imgs/favicon1.png"/>
-		<!-- JS -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.alton.js"></script>
-		<script src="//use.typekit.net/nka7dai.js"></script>
-		<script>try{Typekit.load();}catch(e){}</script>
-		<link rel="stylesheet" href="assets/styles/standard.css">
-
-	</head>
-
-	 <body class="pageWrapper">
-	 	<!-- Google Tag Manager -->
-		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MM9WRV"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-MM9WRV');</script>
-		<!-- End Google Tag Manager -->
-		<section class="pane-container">
-			<div class="pane paneOne">
-				<div class="content-container">
-					<div class="wrapper lightText">
-						<div class="content left">
-							<h1>Hi. I'm Alton. Let's be Friends.</h1>
-							<h2>I'm a nifty jquery plugin for full page scrolling presentations on the web. Want to see what i can do? Scroll down!</h2>
-						</div>
-						<div class="image-container right">
-							<img src="assets/imgs/logo.svg" />
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="pane paneTwo">
-				<div class="content-container" style="background-image: url(assets/imgs/blurred-bg.jpg); background-size: cover;">
-					<div class="wrapper lightText">
-						<div class="content right">
-							<h1>100% Full-Screen Scrolling.</h1>
-
-							<p>Make your web experience an impactful one with full-screen scrolling. Alton is great for presenting: galleries of work; features & benefits of software or services; or really anything else you can put your mind to.</p>
-						</div>
-						<div class="image-container left">
-							<img src="assets/imgs/screen-graphic.svg" />
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="pane paneThree">
-				<div class="content-container">
-					<div class="wrapper darkText">
-						<div class="content left">
-							<h1>Multiple Options Out Of The Box.</h1>
-							<p>You can apply Alton to all parent containers, as we’ve done here. Plus, you can choose to only apply it to the hero section using <a href="/alton/heroscroll">HeroScroll</a>, or use a nifty feature we built in called <a href="/alton/bookend">Bookend</a> to allow for independent starting & finishing containers. Plus, the whole plugin is easy to implement, lightweight, and has fallbacks for mobile.</p>
-						</div>
-						<div class="image-container right">
-							<img src="assets/imgs/options-graphic.svg" />
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="pane paneFour">
-				<div class="content-container">
-					<div class="wrapper lightText">
-						<div class="content center">
-							<h1>Download Links</h1>
-							<a href="https://github.com/paper-leaf/alton/" target="_blank">GitHub</a>
-							<!-- Need Download Link -->
-							<a href="https://github.com/paper-leaf/alton/releases/download/1.2.0/alton.compressed.zip">Download</a>
-							<a href="http://paper-leaf.com" target="_blank">Paper Leaf</a>
-							<div class="tutLinks">
-								<a href="http://demo.paper-leaf.com/alton/heroscroll">
-									← View HeroScroll Demo
-								</a>
-								<!-- Need Tutorial Link -->
-								<a href="http://paper-leaf.com/alton-jquery-scroll-jacking-plugin">
-									Back to Tutorial
-								</a>
-								<a href="http://demo.paper-leaf.com/alton/bookend">
-									View Bookend Demo →
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-    </body>
-
-	<script>
-		(function($) {
-			$(document).ready(function() {
-			    $(document).alton({
-			        fullSlideContainer: 'pane-container',
-			        singleSlideClass: 'pane',
-			        useSlideNumbers: true,
-			        slideNumbersBorderColor: '#fff',
-			        slideNumbersColor: 'transparent',
-			        bodyContainer: 'pageWrapper',
-			    });
-			});
-		})(jQuery);
-	</script>
-
-	</body>
-</html>
->>>>>>> 49dfa46db52a717d88100da8527b5067b88df1bc:index.html
