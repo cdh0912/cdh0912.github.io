@@ -21,75 +21,123 @@ function makeModal() {
 
 var angle1 = +45;
 var angle2 = +45;
+var bodyTag;
+var bodyClassName;
+var currSection;
+var currSlide;
+var lastSection;
+var lastSlide;
 
 $(window).load(function(){
 	
 	//왼쪽 화살표 삭제
 	$(".fp-prev").remove();
 	
-	//화면 여백div 생성1
+	//화면 여백div 생성 - 인덱스 전용
 	$(".boundarySpace").append("<div class='topSpace'></div><div class='leftSpace'></div><div class='rightSpace'></div><div class='bottomSpace'></div>"
 							+  "<div class='rightShadow'></div><div class='bottomShadow'></div>");
-	
-	//화면 여백div 생성2
+	//화면 여백div 생성 - 슬라이드 전용
 	$(".slideSpace").append("<div class='topSpace'></div><div class='centerSpace'></div><div class='leftSpace'></div><div class='rightSpace'></div><div class='bottomSpace'></div>"
 						+	"<div class='rightShadow'></div><div class='centerShadow'></div><div class='bottomShadowL'></div><div class='bottomShadowR'></div>");
 	
-
-	//페이지 로드 시 화살표에 class 주고, text 추가
-	$(".fp-next").addClass("arrowRight").after("<span class='arrowText1'>View<br>detail</span>" +
-												"<span class='arrowText2'>Go<br>back</span>");
-	
 	var arrow1 = $("#section1 .fp-next");
 	var arrow2 = $("#section2 .fp-next");
+	
+	//페이지 로드 시 화살표에 class, style, text 추가
+	$(".fp-next").addClass(">>>>>").css("transform","rotate(45deg)").after("<span class='arrowText'></span>");
 
-	//슬라이드 섹션에서 배경 클릭하면 슬라이드 작동
+	//섹션1 슬라이드 배경을 클릭했을때
 	$("#section1 .slide").on("click", function() {
+		//다음,이전 슬라이드로 이동
 		arrow1.trigger("click");
-		//클릭이미지 클릭 시 삭제
+		//클릭이미지 삭제
 		$(".clickImg").fadeOut( "400" );
+		//화살표 회전
+		rotateArrow(arrow1, angle1, 1);
 	});
+	
+	//섹션2 슬라이드 배경을 클릭했을때
 	$("#section2 .slide").on("click", function() {
+		//다음,이전 슬라이드로 이동
 		arrow2.trigger("click");
-		//클릭이미지 클릭 시 삭제
+		//클릭이미지 삭제
 		$(".clickImg").fadeOut( "400" );
+		//화살표 회전
+		rotateArrow(arrow2, angle2, 2);
 	});
 	
-	//화살표 클릭 시 180도 회전
-	arrow1.on("click", function() {
-		angle1 = angle1 + 180;
-		$(this).css("-webkit-transform", "rotate(" + angle1 + "deg)");
-		$(this).addClass("");
-	})
-	arrow2.on("click", function() {
-		angle2 = angle2 + 180;
-		$(this).css("-webkit-transform", "rotate(" + angle2 + "deg)");
-	})
-	
-	//화살표 마우스오버 시 텍스트 변경
-	$("#section1 .fp-next").hover( function() {
-		var arrowText;
-		if( $("#section1 .fp-slidesNav a").first().hasClass("active")) {
-			arrowText = $("#section1 .arrowText1");
+	//섹션1,2 화살표 마우스오버 시 텍스트 변경
+	$(".fp-next").hover( function() {
+		var arrowText = $(".arrowText");
+		if( currSlide == 0 ) {
+			$(".arrowText").html("View<br>detail");
 		} else {
-			arrowText = $("#section1 .arrowText2");
+			$(".arrowText").html("Go<br>back");
 		};
 		arrowText.stop(false, false).animate({
 			width:"toggle",
 			opacity:"toggle"
 		},250);
 	});
-	$("#section2 .fp-next").hover( function() {
-		var arrowText;
-		if( $("#section2 .fp-slidesNav a").first().hasClass("active")) {
-			arrowText = $("#section2 .arrowText1");
-		} else {
-			arrowText = $("#section2 .arrowText2");
-		};
-		arrowText.stop(false, false).animate({
-            width:"toggle",
-            opacity:"toggle"
-        },250);
-	});
+	
+	//body의 className 변경으로 페이지 이동을 감지하고, 모션 조작
+	addClassNameListener("body");
 	
 });
+
+
+function addClassNameListener(elemId) {
+	var elem = document.getElementById(elemId);
+	var lastClassName = elem.className;
+	window.setInterval( function() {   
+		var className = elem.className;
+		if (className !== lastClassName) {
+			//이전 섹션, 이전 슬라이드 번호 추출
+			bodyClassName = lastClassName.split("-");
+			lastSection = bodyClassName[2];
+			if(bodyClassName.length == 4) {
+				lastSlide = bodyClassName[3]; 
+			}
+			//현재 섹션, 현재 슬라이드 번호 추출
+			bodyClassName = className.split("-");
+			currSection = bodyClassName[2];
+			if(bodyClassName.length == 4) {
+				currSlide = bodyClassName[3]; //현재 수평페이지 번호
+			}
+			
+			//섹션1 내 슬라이드 이동 시 화살표 회전
+			if( lastSection == "DreamCatcher" && lastSection == currSection && lastSlide != currSlide ) {
+				rotateArrow($("#section1 .fp-next"), angle1, 1);
+			}
+			//섹션2 내 슬라이드 이동 시 화살표 회전 
+			if( lastSection == "Moado" && lastSection == currSection && lastSlide != currSlide ) {
+				rotateArrow($("#section2 .fp-next"), angle2, 2);
+			}
+			
+			lastClassName = className;
+		//	alert("lastSection: "+lastSection+"\n"+"lastSlide: "+lastSlide+"\n"+"currSection: "+currSection+"\n"+"currSlide: "+currSlide);
+		}
+	},10);
+}
+
+function rotateArrow(arrow, angle, section) {
+	if( arrow.hasClass(">>>>>") && lastSlide == 0 ) {
+		angle = angle + 180;
+		switch (section) {
+		case 1 : angle1 = angle; break;
+		case 2 : angle2 = angle; break;
+		}
+		arrow.css("-webkit-transform", "rotate(" + angle + "deg)");
+		arrow.removeClass(">>>>>");
+		arrow.addClass("<<<<<");
+	} else if( arrow.hasClass("<<<<<") && lastSlide == 1 ) {
+		angle = angle + 180;
+		switch (section) {
+		case 1 : angle1 = angle; break;
+		case 2 : angle2 = angle; break;
+		}
+		arrow.css("-webkit-transform", "rotate(" + angle + "deg)");
+		arrow.removeClass("<<<<<");
+		arrow.addClass(">>>>>");
+	} 
+}
