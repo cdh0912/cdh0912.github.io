@@ -15,22 +15,22 @@
 	<link rel="stylesheet" type="text/css" href="assets/styles/style.css">
 
 	<!-- JS -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<!--<script src="//use.typekit.net/vyu2fgc.js"></script> -->
 <!--<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script> -->
 	<script type="text/javascript" src="assets/js/jquery.slimscroll.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
 	<script type="text/javascript" src="assets/js/cdh0912.js"></script>
-	<script src="//use.typekit.net/nka7dai.js"></script>
 	<script type="text/javascript">
 	/* 
 		//에러페이지
 		window.onerror = function() {
 			document.location.href = "error.html";
 		}
-		 */
-		//어도비 폰트
-		Typekit.load();
+
+		try{Typekit.load();}catch(e){}
+	 */
 
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
@@ -69,7 +69,7 @@
 					<img src="assets/imgs/click-white.png">
 				</div>
 				<div class="intro">
-					<h1>dreamcatcher</h1>
+					<h1>DREAMCATCHER</h1>
 					<p>dreamcatcher dreamcatcher dreamcatcher dreamcatcher</p>
 				</div>
 			</div>
@@ -90,7 +90,7 @@
 				</div>
 				<div class="intro">
 					<h1>Moado</h1>
-					<p>Moado Moado Moado Moado Moado </p>
+					<p style="font-family: PT Sans Narrow; ">Moado Moado Moado Moado Moado </p>
 				</div>
 			</div>
 		    <div class="slide" id="slide2" style="background:darkgrey">
