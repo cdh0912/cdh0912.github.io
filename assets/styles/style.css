@@ -240,3 +240,10 @@ h1{
     font-weight: bold;
 }
 
+/* iframe */
+iframe {
+	width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    border: 0px;
+    margin-top: 5px;
+}
