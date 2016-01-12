@@ -83,6 +83,10 @@ $(window).load(function(){
 	//body의 className 변경으로 페이지 이동을 감지하고, 모션 조작
 	addClassNameListener("body");
 	
+	
+	//로딩애니메이션
+	$("#loading").fadeOut();
+	
 });
 
 

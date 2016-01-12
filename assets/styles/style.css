@@ -34,7 +34,6 @@ font-weight: 900;
 src: local('brandon-grotesque'), url("../fonts/brandongrotesque-black-webfont.ttf") format('truetype');
 }
 
-
 h1{
 		font-size: 5em;
 		font-family: "brandon-grotesque", sans-serif;
@@ -246,4 +245,30 @@ iframe {
     height: calc(100% - 50px);
     border: 0px;
     margin-top: 5px;
+}
+
+
+/* 로딩애니메이션 */
+#loading {
+	position: fixed;
+	text-align: center;
+	z-index: 9999;
+	overflow: auto;
+	padding-top: calc(50vh - 29px);
+	width: 100%;
+	height: 100vh;
+	background-color: #333333;
+	opacity: 0.99;
+}
+
+#loading img {
+	width: 58px;
+}
+
+#loading p {
+	color: white;
+	opacity: 0.6;
+	display: block;
+	margin-top: 7px;
+}
 }
