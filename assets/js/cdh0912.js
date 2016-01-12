@@ -84,7 +84,7 @@ $(window).load(function(){
 			});
 
 	$(".fp-next").on("click", function() {
-		arrowText.fadeOut();
+		arrowText.fadeOut("fast");
 	});
 
 	//body의 className 변경으로 페이지 이동을 감지하고, 모션 조작
