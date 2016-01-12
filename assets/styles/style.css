@@ -34,26 +34,27 @@ font-weight: 900;
 src: local('brandon-grotesque'), url("../fonts/brandongrotesque-black-webfont.ttf") format('truetype');
 }
 
-h1{
-		font-size: 5em;
-		font-family: "brandon-grotesque", sans-serif;
-		color: #fff;
-		margin:0;
-	}
-	.intro p{
-		color: #fff;
-	}
+h1 {
+	font-size: 5em;
+	font-family: "brandon-grotesque", sans-serif;
+	color: #fff;
+	margin:0;
+}
 
-	.section{
-		text-align:center;
-	}
+.intro p{
+	color: #fff;
+}
 
-	.controlArrow.prev {
-		left: 55px;
-	}
-	.controlArrow.next{
-		right: 55px;
-	}
+.section{
+	text-align:center;
+}
+
+.controlArrow.prev {
+	left: 55px;
+}
+.controlArrow.next{
+	right: 55px;
+}
 
 
 /* 화면 여백 */
@@ -195,13 +196,18 @@ h1{
 }
 
 .arrowText {
-    right: 27px;
-    top: 47.2%;
-    width: 140px;
     position: absolute;
-    opacity: 0.7;
-    z-index: 3;
     display: none;
+    right: 17px;
+    top: 14px;
+    z-index: 3;
+    opacity: 0.7;
+    transform: rotate(-45deg);
+}
+.arrowText-left {
+	right: -43px;
+	top: -46px;
+    transform: rotate(135deg);
 }
 
 .section {
@@ -222,10 +228,14 @@ h1{
 .clickImg {
     top: 10%;
     right: 55%;
-    width: 15%;
+    width: 9%;
     max-width: 200px;
     position: absolute;
 	z-index: 999;
+}
+
+.clickImg img {
+    width: 100%;
 }
 
 .clickImg > p {
@@ -270,5 +280,4 @@ iframe {
 	opacity: 0.6;
 	display: block;
 	margin-top: 7px;
-}
 }

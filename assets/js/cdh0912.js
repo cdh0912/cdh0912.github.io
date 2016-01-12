@@ -44,7 +44,7 @@ $(window).load(function(){
 	var arrow2 = $("#section2 .fp-next");
 	
 	//페이지 로드 시 화살표에 class, style, text 추가
-	$(".fp-next").addClass(">>>>>").css("transform","rotate(45deg)").after("<span class='arrowText'></span>");
+	$(".fp-next").addClass(">>>>>").css("transform","rotate(45deg)").append("<span class='arrowText'></span>");
 
 	//섹션1 슬라이드 배경을 클릭했을때
 	$("#section1 .slide").on("click", function() {
@@ -70,9 +70,9 @@ $(window).load(function(){
 	$(".fp-next").hover( function() {
 		var arrowText = $(".arrowText");
 		if( currSlide == 0 ) {
-			$(".arrowText").html("View<br>detail");
+			$(".arrowText").removeClass("arrowText-left").html("View<br>detail");
 		} else {
-			$(".arrowText").html("Go<br>back");
+			$(".arrowText").addClass("arrowText-left").html("Go<br>back");
 		};
 		arrowText.stop(false, false).animate({
 			width:"toggle",
