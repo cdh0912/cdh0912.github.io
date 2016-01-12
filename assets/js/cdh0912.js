@@ -65,21 +65,28 @@ $(window).load(function(){
 		//화살표 회전
 		rotateArrow(arrow2, angle2, 2);
 	});
-	
+
 	//섹션1,2 화살표 마우스오버 시 텍스트 변경
-	$(".fp-next").hover( function() {
-		var arrowText = $(".arrowText");
-		if( currSlide == 0 ) {
-			$(".arrowText").removeClass("arrowText-left").html("View<br>detail");
-		} else {
-			$(".arrowText").addClass("arrowText-left").html("Go<br>back");
-		};
-		arrowText.stop(false, false).animate({
-			width:"toggle",
-			opacity:"toggle"
-		},250);
+	var arrowText = $(".arrowText");
+	$(".fp-next").hover(
+			function() {
+				if (currSlide == 0) {
+					arrowText.removeClass("arrowText-left")
+							.html("View<br>detail");
+				} else {
+					arrowText.addClass("arrowText-left").html(
+							"Go<br>back");
+				}
+				;
+				arrowText.fadeIn();
+			}, function() {
+				arrowText.fadeOut();
+			});
+
+	$(".fp-next").on("click", function() {
+		arrowText.fadeOut();
 	});
-	
+
 	//body의 className 변경으로 페이지 이동을 감지하고, 모션 조작
 	addClassNameListener("body");
 	
