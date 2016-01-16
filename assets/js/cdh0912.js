@@ -35,10 +35,10 @@ $(window).load(function(){
 	
 	//화면 여백div 생성 - 인덱스 전용
 	$(".boundarySpace").append("<div class='topSpace'></div><div class='leftSpace'></div><div class='rightSpace'></div><div class='bottomSpace'></div>"
-							+  "<div class='rightShadow'></div><div class='bottomShadow'></div>");
+							+  "<div class='leftShadow'></div><div class='rightShadow'></div><div class='topShadow'></div><div class='bottomShadow'></div>");
 	//화면 여백div 생성 - 슬라이드 전용
 	$(".slideSpace").append("<div class='topSpace'></div><div class='centerSpace'></div><div class='leftSpace'></div><div class='rightSpace'></div><div class='bottomSpace'></div>"
-						+	"<div class='rightShadow'></div><div class='centerShadow'></div><div class='bottomShadowL'></div><div class='bottomShadowR'></div>");
+						+	"<div class='leftShadow'></div><div class='rightShadow'></div><div class='centerShadowL'></div><div class='centerShadowR'></div><div class='topShadowL'></div><div class='topShadowR'></div><div class='bottomShadowL'></div><div class='bottomShadowR'></div>");
 	
 	var arrow1 = $("#section1 .fp-next");
 	var arrow2 = $("#section2 .fp-next");
@@ -92,7 +92,7 @@ $(window).load(function(){
 	
 	
 	//로딩애니메이션
-	$("#loading").fadeOut();
+	$(".spinner").fadeOut();
 	
 });
 
@@ -138,7 +138,7 @@ function rotateArrow(arrow, angle, section) {
 		case 1 : angle1 = angle; break;
 		case 2 : angle2 = angle; break;
 		}
-		arrow.css("-webkit-transform", "rotate(" + angle + "deg)");
+		arrow.css("transform", "rotate(" + angle + "deg)");
 		arrow.removeClass(">>>>>");
 		arrow.addClass("<<<<<");
 	} else if( arrow.hasClass("<<<<<") && lastSlide == 1 ) {
@@ -147,7 +147,7 @@ function rotateArrow(arrow, angle, section) {
 		case 1 : angle1 = angle; break;
 		case 2 : angle2 = angle; break;
 		}
-		arrow.css("-webkit-transform", "rotate(" + angle + "deg)");
+		arrow.css("transform", "rotate(" + angle + "deg)");
 		arrow.removeClass("<<<<<");
 		arrow.addClass(">>>>>");
 	} 

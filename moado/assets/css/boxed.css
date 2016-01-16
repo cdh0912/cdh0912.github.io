@@ -1,0 +1,30 @@
+/************************************************************/
+/*											Boxed version												*/
+/************************************************************/
+body {
+  background-color: #f3f7f7;
+}
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 21px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 21px 0 rgba(0, 0, 0, 0.2);
+}
+.wrapper--dashboard,
+.error.wrapper {
+  max-width: 100%;
+}
+.error .wrapper {
+  background-color: #34495e;
+}
+.header-fixed {
+  left: auto;
+  max-width: 1200px;
+}
+.hero-header {
+  height: 658px;
+}
+.pp-section {
+  max-width: 1200px;
+}

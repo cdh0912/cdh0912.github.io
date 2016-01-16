@@ -1,0 +1,367 @@
+/* 현재 기능 이름 (현재 페이지 이름) */
+.plannerText {
+    color: lightgrey;
+    font-weight: normal;
+}
+.plannerTextDividerUP {
+	margin-top: 16px; margin-bottom: 16px;
+}
+.plannerText2 {
+	margin-top:0px; margin-bottom:16px;
+}
+.ourboard .plannerTextDividerDOWN {
+	margin-bottom: -14px; 
+}
+.scheduler .plannerTextDividerDOWN {
+	margin-bottom: 32px; 
+}
+.todolist .plannerTextDividerDOWN {
+	margin-bottom: 10px; 
+}
+
+
+/* /////////////////// 아워보드 /////////////////////// */
+/* ourboard 공통 */
+.center {
+	margin: 0 auto;
+	display:table;
+}
+.table--wide tbody > tr > td {
+	padding: 7px 20px 7px 20px;
+}
+.table--wide thead {
+	border: 4px solid #85d6de;
+    border-bottom: 4px solid #85d6de;
+}
+.boardBtn {
+	margin: 10px 15px 10px 15px;
+}
+.table {
+	font-size: 1.2rem;
+}
+
+/* ourboardList */ 
+.ourboardList .table--wide {
+	margin-bottom:0px;
+}
+.ourboardList .indexCell, .nameCell, .dateCell, .hitCell, th {
+	text-align: center;
+}
+.ourboardList .subjectCell {
+	text-align: left;
+}
+.ourboardList .divider--top-universal {
+	margin-top: 7px;
+}
+
+
+/* ourboardWrite */
+#registerBtn {
+	border:1px solid #34495e;
+}
+#cancelBtn {
+	background-color: white;
+	border:1px solid #34495e;
+	color: #34495e;
+	margin-left: 10px;
+}
+.ourboardWrite input {
+	border: 0px;
+}
+
+/* ourboardView */ 
+.attachedFile {
+	float:right; margin-right:4%; border-bottom:1px solid;
+}
+.tooltip-line .tooltip-content::after {
+	left:76%!important;
+}
+.tooltip-line .tooltip-content {
+	left:-75%!important;
+}
+#registerBtn {
+	border:1px solid #34495e;
+}
+#cancelBtn {
+	background-color: white;
+	border:1px solid #34495e;
+	color: #34495e;
+	margin-left: 10px;
+}
+
+/*  */
+.person {
+	padding-bottom: 0px;
+}
+.image-container img {
+	height: 150px;
+	max-width:none;
+}
+.person .person__image {
+	margin: 0 30px;
+}
+.person .person__position {
+	margin-top:3px;
+}
+.person .person__name {
+	padding-top:3.5%;
+}
+.image-container--max {
+	max-width: none;
+}
+.historySubject {
+	font-size:25px;
+	margin-top:7px;
+	padding-left:23px;
+}
+.historyRecommandCount {
+	text-align: right;
+	padding-right: 12px;
+	padding-bottom: 3px;
+}
+.historyReplyCount {
+	text-align:right;
+	padding-right:12px;
+}
+.historySubjectDivider {
+	margin:0px;
+}
+.projectBtns .btn-sm-rect {
+	font-size:11px;
+}
+.person .person__position {
+	margin-bottom:15px;
+}
+
+
+
+
+
+
+/* summerNote */
+.note-editable{
+	margin-top: 5px;
+	background-color:white;
+	overflow:auto;
+}
+.note-codable {
+	display:none;
+}
+.note-dropzone {
+	display: none;
+}
+#summernoteCell {
+	padding : 0px;
+}
+.note-editor {
+	border:0px;
+}
+.note-editor .note-toolbar {
+	background-color: transparent;
+	border-bottom: 0px;
+}
+.note-editor .btn-default {
+	border-color: #85D6DE;
+}
+
+
+/* 댓글 */
+.commentName {
+	font:16px 'Open Sans', sans-serif;
+	font-weight: bold;
+	color: #34495e;
+}
+.commentTime {
+	color: rgba(128, 128, 128, 0.78);
+	font: 13px 'Open Sans', sans-serif;
+}
+.commentButton {
+	float: right;
+	color: rgb(89, 89, 89);
+	font: 14px 'Open Sans', sans-serif;
+	margin-right: 3px;
+}
+.forum-item .forum-item__head {
+	padding:16px 20px 15px;
+}
+.forum-item .forum-item__photo {
+    width: 37px;
+    height: 37px;
+    position: relative;
+    float: left;
+    margin-right: 8px;
+    margin-left: 4px;
+    left: -4px;
+    top: -7px;
+}
+.forum-item--admin .forum-item__head:before {
+	background-color: transparent;
+}
+.replyImage {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	border-radius:8px;
+}
+.dashedDivider {
+	width: 100%;
+	background-color: transparent;
+	border-bottom: 1px dashed #DFE6E7;
+}
+.replyText {
+	color:#737c85;
+	font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+.replyForm {
+	padding-right:1%;
+	padding-left:0px;
+	margin-top:10px;
+}
+.replyContent {
+    float: left;
+    height: 83px;
+    width:100%;
+    border: 1px solid #D5D5D5;
+}
+.replyButton {
+    float: left;
+	font-size:18px;
+	line-height:70px!important;
+	margin-top:10px;
+}
+.forum-item .forum-item__body {
+	padding : 25px 22px 25px;
+	line-height:25px;
+}
+.contentAreaHeight {
+	height:160px;
+}
+
+
+
+
+
+
+
+/* /////////////////// 투두리스트 /////////////////////// */
+.todolist .progress-bar {
+	width: 35%;
+}
+.todolist #todoTab a, .todolist  #doneTab a {
+	padding:20px 5px 15px; transition:all 500ms ease;
+}
+.todolist .content-wrap {
+	border-left:1px lightgray solid; 
+	border-right:1px lightgray solid; 
+	border-bottom:1px lightgray solid;
+}
+.todolist .cut-section {
+	padding: 0px;
+}
+.todolist .writebody {
+	padding:32px 25px 70px 25px
+}
+.todolist .contact--check {
+	padding-right: 0px;
+}
+.todolist .accordion--blocks .accordion-link {
+	padding: 15px 15px 15px 48px;
+}
+
+
+
+
+/* /////////////////// 스케줄러 /////////////////////// */
+#calendar .fc-event {
+	background-color: #3A86AC!important;
+	border: 2px solid #3A86AC;
+	color: #FFFFFF!important;
+}
+.fc tbody .fc-row .fc-content-skeleton tbody tr:last-child td {
+	height: 32px;
+}
+#calendar .fc-button-group, #calendar .fc button {
+	display: inline;
+}
+
+
+/* 타임라인 */
+#timeline .post--short-link:before { 		/* 타임라인 기본 ㄷ동그라미 */
+	border: solid 4px #dfe6e7;
+}
+#timeline input, #timeline textarea{
+	  padding: 9px 30px;
+	  margin-bottom: 16px;
+	  font-size: 14px;
+	  font-style: normal;
+	  color: #34495e;
+	  background: none;
+	  border: none;
+	  border: solid 1px #3A86AC;
+	  -webkit-border-radius: 20px;
+	  -moz-border-radius: 20px;
+	  border-radius: 20px;
+	  box-shadow: none;
+	  -webkit-transition: border-color 300ms ease-out;
+	  -o-transition: border-color 300ms ease-out;
+	  transition: border-color 300ms ease-out;
+}
+#timeline textarea{
+	min-height: 100px;
+}
+#timeline .btn-sm {
+  padding: 10px 18px 7px;
+  font-size: 17px;
+  height: 38px;
+  color: white;
+  background-color: #3A86AC;
+  -webkit-border-radius: 22px;
+  -moz-border-radius: 22px;
+  border-radius: 22px;
+}
+#timeline .writeScheduleForm .post--short-link .post:hover .post__detail { /* 입력 오버 보더 */
+  	border : 8px solid #85d6de!important;
+}
+#timeline .writeScheduleForm .post--short-link .post:hover #addScheduleBtn { /* 입력 오버 버튼 */
+  	background-color : #85d6de!important;
+}
+#timeline .writeScheduleForm .post--short-link .post:hover input,
+#timeline .writeScheduleForm .post--short-link .post:hover textarea { /* 입력 오버 텍스트필드 텍스트에어리어 */
+  	border: solid 1px #85d6de!important;
+}
+
+
+#timeline .post--short-link .post__detail { 						/* 내용 기본 보더  */
+	border : 5px solid #85D6DE;
+}
+#timeline .post--short-link .post:hover .post__detail:before {		/* 내용 기본 보더  */
+	border : 5px solid #85D6DE!important;
+}	
+#timeline .post--short-link .post:hover .post__detail {				/* 내용 오버 보더 */
+  	border : 5px solid #3A86AC!important;
+}
+#timeline .post--short-link .post:hover .post__heading {						/* 내용 오버 h3 */
+  	color: #3A86AC;
+}
+
+
+#timeline .post--short-link .post .post__date {									/* 내용 기본 date */
+	transition: all 300ms ease-in;
+}
+#timeline .post .post__tags, .post .tags .tags__item--user:before {			/* 내용 기본 name , icon */
+	transition: all 300ms ease-in;
+}
+
+
+#timeline .post--short-link .post:hover .post__date {								/* 내용 오버 date */
+  	color: #3A86AC;
+	transition: all 400ms ease-in;
+}
+#timeline .post:hover .post__tags, #timeline .post:hover .tags .tags__item--user:before {	/* 내용 오버 name , icon */
+	color : #3A86AC;
+	transition: all 400ms ease-in;
+}
+

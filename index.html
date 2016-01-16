@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>DongHo | Personal records</title>
-	<meta name="author" content="Alvaro Trigo Lopez" />
-	<meta name="description" content="fullPage full-screen navigation and sections control menu." />
-	<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,navigation,control arrows, dots" />
+	<meta name="author" content="Dong-ho Jo" />
+	<meta name="description" content="" />
+	<meta name="keywords"  content="" />
 	<meta name="Resource-type" content="Document" />
+	<meta name="pinterest" content="nopin" />
+	
 	<link rel="icon" href="assets/imgs/dh.ico" />
 	<link rel="icon" href="assets/imgs/dh.png" sizes="192x192" type="image/png"/>
 	<!-- CSS -->
@@ -15,6 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/styles/style.css">
 
 	<!-- JS -->
+	<script type="text/javascript" src="assets/js/prefixfree.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <!--<script src="//use.typekit.net/vyu2fgc.js"></script> -->
@@ -23,6 +26,10 @@
 	<script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
 	<script type="text/javascript" src="assets/js/cdh0912.js"></script>
 	<script type="text/javascript">
+
+		if( location.protocol == "https:" ) {
+			document.location.replace("http://cdh0912.github.io");
+		}
 	/* 
 		//에러페이지
 		window.onerror = function() {
@@ -35,7 +42,7 @@
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
 				anchors: ['Intro', 'DreamCatcher', 'Moado', 'Profile'],
-				sectionsColor: ['#1BBC9B', '#C05586', '#7E8F7C', 'rgb(250,231,199)'],
+				sectionsColor: ['#7E8F7C', '#AA5D82', '#34495E', '#34495E'],
 				navigation: true,
 				slidesNavigation: true,
 				navigationPosition: 'left',
@@ -78,9 +85,8 @@
 					<p>dreamcatcher dreamcatcher dreamcatcher dreamcatcher</p>
 				</div>
 			</div>
-		    <div class="slide" id="slide2" style="background:white">
-				<div class="slideSpace"></div>
-				<iframe src="dreamcatcher.html"></iframe>
+		    <div class="slide" id="slide2" style="background:#BD427D">
+				<iframe src="dreamcatcher/map.html"></iframe>
 			</div>
 		</div>
 		
@@ -97,9 +103,8 @@
 					<p style="font-family: PT Sans Narrow; ">Moado Moado Moado Moado Moado </p>
 				</div>
 			</div>
-		    <div class="slide" id="slide2" style="background:darkgrey">
-				<div class="slideSpace"></div>
-				<!-- <iframe src="moado.html"></iframe> -->
+		    <div class="slide" id="slide2" style="background:#34495E">
+				<iframe src="moado/projectMain.html"></iframe>
 			</div>
 		</div>
 		

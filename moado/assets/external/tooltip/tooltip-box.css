@@ -1,0 +1,88 @@
+.tooltip-box {
+	display: inline-block;
+	position: relative;
+	z-index: 999;
+}
+
+/* Trigger text */
+
+.tooltip-box .tooltip-item {
+	font-size: 14px;
+	font-weight: bold;
+	color: #85d6de;
+	cursor: pointer;
+	z-index: 100;
+	position: relative;
+	display: inline-block;
+	-webkit-transition: background-color 0.3s, color 0.3s, -webkit-transform 0.3s;
+	transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.tooltip-box:hover .tooltip-item,
+.tooltip-box.tooltip-show .tooltip-item {
+	color: #fff;
+	-webkit-transform: translate3d(0,-0.5em,0);
+	transform: translate3d(0,-0.5em,0);
+}
+
+/* Tooltip */
+
+.tooltip-box .tooltip-content {
+	padding: 22px 28px;
+	position: absolute;
+	z-index: 99;
+	width: 360px;
+	left: 50%;
+	margin-left: -180px;
+	bottom: -5px;
+	text-align: left;
+	background: #dfe6e7;
+	opacity: 0;
+	font-size: 14px;
+	line-height: 26px;
+	color: #34495e;
+	border-bottom: 45px solid #34495e;
+	cursor: default;
+	pointer-events: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-webkit-transform: translate3d(0,-0.5em,0);
+	transform: translate3d(0,-0.5em,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-box .tooltip-text a{
+	display: block;
+	color: #34495e;
+	font-weight: bold;
+}
+
+.tooltip-box .tooltip-text {
+	opacity: 0;
+	-webkit-transform: translate3d(0,1.5em,0);
+	transform: translate3d(0,1.5em,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-box:hover .tooltip-content,
+.tooltip-box:hover .tooltip-text,
+.tooltip-box.tooltip-show .tooltip-content,
+.tooltip-box.tooltip-show .tooltip-text  {
+	pointer-events: auto;
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.tooltip-box.tooltip--secondary .tooltip-content{
+	background: #85d6de;
+}
+
+.tooltip-box.tooltip--bordered .tooltip-content{
+	background: #fff;
+	border: 1px solid #34495e;
+	border-bottom: 45px solid #34495e;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

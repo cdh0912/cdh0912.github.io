@@ -1,0 +1,108 @@
+.tooltip-round {
+	display: inline-block;
+	position: relative;
+	z-index: 999;
+}
+
+/* Tooltip */
+
+.tooltip-round .tooltip-content {
+	position: absolute;
+	z-index: 99;
+	width: 80px;
+	height: 80px;
+	padding-top: 25px;
+	left: 50%;
+	margin-left: -40px;
+	bottom: 100%;
+	border-radius: 50%;
+	text-align: center;
+	background: #34495e;
+	color: #fff;
+	opacity: 0;
+	margin-bottom: 20px;
+	cursor: default;
+	pointer-events: none;
+}
+
+.tooltip-round .tooltip-content i {
+	padding-top: 3px;
+	opacity: 0;
+	font-size: 24px;
+}
+
+.tooltip-round:hover .tooltip-content,
+.tooltip-round:hover .tooltip-content i,
+.tooltip-round.tooltip-show .tooltip-content,
+.tooltip-round.tooltip-show .tooltip-content i  {
+	opacity: 1;
+}
+
+.tooltip-effect-2 .tooltip-content {
+	-webkit-transform: translate3d(0,10px,0);
+	transform: translate3d(0,10px,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-effect-2 .tooltip-content i {
+	-webkit-transform: translate3d(0,15px,0);
+	transform: translate3d(0,15px,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-round:hover .tooltip-content,
+.tooltip-round:hover .tooltip-content i,
+.tooltip-round.tooltip-show .tooltip-content,
+.tooltip-round.tooltip-show .tooltip-content i {
+	pointer-events: auto;
+	-webkit-transform: translate3d(0,0,0) scale3d(1,1,1);
+	transform: translate3d(0,0,0) scale3d(1,1,1);
+}
+
+/* Arrow */
+
+.tooltip-round .tooltip-content::after {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin: -7px 0 0 -15px;
+	width: 30px;
+	height: 20px;
+	background: url(images/tooltip2.svg) no-repeat center center;
+	background-size: 100%;
+
+}
+
+/*Style*/
+.tooltip-round.tooltip--secondary .tooltip-content{
+	background: #85d6de;
+}
+
+.tooltip-round.tooltip--secondary .tooltip-content::after{
+	background: url(images/tooltip1.svg) no-repeat center center;
+}
+
+.tooltip-round.tooltip--shadow .tooltip-content{
+	background: #dfe6e7;
+	color: #34495e;
+}
+
+.tooltip-round.tooltip--shadow .tooltip-content::after{
+	background: url(images/tooltip4.svg) no-repeat center center;
+	
+}
+
+.tooltip-round.tooltip--bordered .tooltip-content{
+	background: #fff;
+	border: 1px solid #34495e;
+	color: #34495e;
+	z-index: 20;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-round.tooltip--bordered .tooltip-content::after{
+	background: url(images/tooltip3.png) no-repeat 50% 5px;
+}

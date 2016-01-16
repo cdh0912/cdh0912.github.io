@@ -1,0 +1,71 @@
+/* Default tab style */
+
+.tabs-custom {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+
+/* Nav */
+.tabs-custom  nav {
+	text-align: center;
+}
+
+.tabs-custom  nav ul {
+	position: relative;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: flex;
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+	-ms-box-orient: horizontal;
+	-ms-box-pack: center;
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+}
+
+.tabs-custom  nav ul li {
+	position: relative;
+	z-index: 1;
+	display: block;
+	margin: 0;
+	text-align: center;
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+
+.tabs-custom  nav a {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.tabs-custom  nav a span {
+	vertical-align: middle;
+}
+
+/* Content */
+.tabs-custom .content-wrap {
+	position: relative;
+}
+
+.tabs-custom .content-wrap section {
+	display: none;
+}
+
+.tabs-custom .content-wrap section.content-current {
+	display: block;
+}

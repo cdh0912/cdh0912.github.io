@@ -1,0 +1,124 @@
+.tooltip-classic {
+	display: inline-block;
+	position: relative;
+	z-index: 999;
+}
+
+/* Trigger text */
+
+.tooltip-classic .tooltip-item {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: bold;
+	color: #85d6de;
+}
+
+/* Tooltip */
+
+.tooltip-classic .tooltip-content {
+	position: absolute;
+	z-index: 9999;
+	width: 360px;
+	left: 50%;
+	margin: 0 0 20px -180px;
+	bottom: 100%;
+	text-align: left;
+	background: #34495e;
+	font-size: 14px;
+	opacity: 0;
+	cursor: default;
+	-ms-pointer-events: none;
+	pointer-events: none;
+	padding: 20px;
+}
+
+.tooltip-effect-1 .tooltip-content {
+	-webkit-transform: translate3d(0,-10px,0);
+	transform: translate3d(0,-10px,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-classic:hover .tooltip-content,
+.tooltip-classic.tooltip-show .tooltip-content {
+	-ms-pointer-events: auto;
+	pointer-events: auto;
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0) rotate3d(0,0,0,0);
+	transform: translate3d(0,0,0) rotate3d(0,0,0,0);
+}
+
+/* Arrow */
+
+.tooltip-classic .tooltip-content::after {
+	content: '';
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	height: 0;
+	width: 0;
+	position: absolute;
+	-ms-pointer-events: none;
+	pointer-events: none;
+	border-color: transparent;
+	border-top-color: #34495e;
+	border-width: 10px;
+	margin-left: -10px;
+}
+
+/* Tooltip content*/
+
+.tooltip-classic .tooltip-content img {
+	position: relative;
+	height: 165px;
+	display: block;
+	float: left;
+	margin-right: 20px;
+}
+
+.tooltip-classic .tooltip-text {
+	font-size: 14px;
+	display: block;
+	color: #fff;
+	line-height: 26px;
+	margin-top: 12px;
+}
+
+/* Tooltip style*/
+.tooltip-classic.tooltip--secondary .tooltip-content{
+	background: #85d6de;
+}
+
+.tooltip-classic.tooltip--secondary .tooltip-content::after{
+	border-top-color: #85d6de;
+}
+
+.tooltip-classic.tooltip--bordered .tooltip-content{
+	background: #fff;
+	border: 1px solid #34495e;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-classic.tooltip--bordered .tooltip-text{
+	color: #34495e;
+}
+
+.tooltip-classic.tooltip--bordered .tooltip-content::after{
+	border-top-color: #fff;
+}
+
+.tooltip-classic.tooltip--bordered .tooltip-content::before {
+	content: '';
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: transparent;
+	border-top-color: #34495e;
+	border-width: 11px;
+	margin-left: -11px;
+}
