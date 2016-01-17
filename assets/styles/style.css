@@ -386,4 +386,10 @@ iframe {
 :read-write {}
 
 
-
+/* 각 섹션 및 슬라이드 배경 */
+#section2 #slide1 {
+	background-image: url('../imgs/MoaDo_Introduce.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
