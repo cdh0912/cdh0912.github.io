@@ -41,12 +41,12 @@
 
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
-				anchors: ['Intro', 'DreamCatcher', 'Moado', 'Profile'],
-				sectionsColor: ['#7E8F7C', '#AA5D82', '#34495E', '#34495E'],
+				anchors: ['Intro', 'DreamCatcher', 'Moado', 'Profile'], 
 				navigation: true,
 				slidesNavigation: true,
 				navigationPosition: 'left',
-				navigationTooltips: ['Intro', 'DreamCatcher', 'Moado', 'Profile']
+				navigationTooltips: ['Intro', 'DreamCatcher', 'Moado', 'Profile'],
+				scrollingSpeed: 1000
 			});
 		});
 	
@@ -65,10 +65,11 @@
 <!------------------------------------------------------------------------------------->
 	
 		<div class="section" id="section0">
-			<div class="boundarySpace"></div>
-			<div class="intro">
-				<h1>introduce</h1>
-				<p>intro sections</p>
+			<div class="canvas" style="background:#7E8F7C">
+				<div class="intro">
+					<h1>introduce</h1>
+					<p>intro sections</p>
+				</div>
 			</div>
 		</div>
 	
@@ -76,17 +77,20 @@
 	
 		<div class="section" id="section1">
 		    <div class="slide" id="slide1">
-				<div class="slideSpace"></div>
-				<div class="clickImg">
-					<img src="assets/imgs/click-white.png">
-				</div>
-				<div class="intro">
-					<h1>DREAMCATCHER</h1>
-					<p>dreamcatcher dreamcatcher dreamcatcher dreamcatcher</p>
+				<div class="canvas" style="background:#AA5D82">
+					<div class="clickImg">
+						<img src="assets/imgs/click-white.png">
+					</div>
+					<div class="intro">
+						<h1>DREAMCATCHER</h1>
+						<p>dreamcatcher dreamcatcher dreamcatcher dreamcatcher</p>
+					</div>
 				</div>
 			</div>
-		    <div class="slide" id="slide2" style="background:#BD427D">
-				<iframe src="dreamcatcher/map.html"></iframe>
+		    <div class="slide" id="slide2">
+				<div class="canvas" style="background:#BD427D">
+					<iframe src="dreamcatcher/map.html"></iframe>
+				</div>
 			</div>
 		</div>
 		
@@ -94,26 +98,30 @@
 		
 		<div class="section" id="section2">
 		    <div class="slide" id="slide1">
-				<div class="slideSpace"></div>
-				<div class="clickImg">
-					<img src="assets/imgs/click-white.png">
-				</div>
-				<div class="intro">
-					<h1>MoaDo </h1>
-					<p style="font-family: PT Sans Narrow; ">팀 Moa서 Do 프로젝트 !</p>
+				<div class="canvas">
+					<div class="clickImg">
+						<img src="assets/imgs/click-white.png">
+					</div>
+					<div class="intro">
+						<h1>MoaDo </h1>
+						<p style="font-family: PT Sans Narrow; ">팀 Moa서 Do 프로젝트 !</p>
+					</div>
 				</div>
 			</div>
-		    <div class="slide" id="slide2" style="background:#34495E">
-				<iframe src="moado/projectMain.html"></iframe>
+		    <div class="slide" id="slide2">
+				<div class="canvas" style="background:#34495E">
+					<iframe src="moado/projectMain.html"></iframe>
+				</div>
 			</div>
 		</div>
 		
 <!----------------------------------------------------------------------------------------->
 		
 		<div class="section" id="section3">
-			<div class="boundarySpace"></div>
-			<div class="intro">
-				<h1>Profile with photo</h1>
+			<div class="canvas" style="background:#34495E">
+				<div class="intro">
+					<h1>Profile with photo</h1>
+				</div>
 			</div>
 		</div>
 		
