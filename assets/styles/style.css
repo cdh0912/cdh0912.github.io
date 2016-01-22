@@ -49,6 +49,7 @@ src: local('brandon-grotesque'), url("../fonts/brandongrotesque-black-webfont.tt
 
 body {
 	font-family: 'Jeju Gothic', serif;
+	background: linear-gradient(to bottom, rgba(240,240,240,0) 0%, rgba(0,0,0,0.3) 100%);
 }
 
 h1 {
@@ -239,7 +240,7 @@ iframe {
 	width: calc(100% - 90px);
     height: calc(100% - 90px);
     margin: 35px 47px 55px 43px;
-   	box-shadow: 7px -11px 18px -10px rgba(0,0,0,0.8) inset, -7px 5px 18px -5px rgba(0,0,0,0.4) inset, 1px 10px 10px 3px rgba(0,0,0,0.3), 12px 33px 40px 0px rgba(0,0,0,0.25);
+   	box-shadow: 7px -11px 18px -10px rgba(0,0,0,0.8) inset, -7px 5px 18px -5px rgba(0,0,0,0.4) inset, 1px 10px 10px 3px rgba(0,0,0,0.3), 12px 33px 40px 0px rgba(0,0,0,0.25), 0px -420px 350px 35px rgba(0,0,0,0.3) inset;
    	display: table;
    	border-radius: 4px;
 }
@@ -257,19 +258,16 @@ iframe {
 	background: #444;
 }
 
-
-#section0 {
-	background: linear-gradient(to bottom, rgb(245,245,245) 0%, rgb(240,240,240) 100%);
+.fp-tableCell {
+	background-image: url("http://localhost/cdh0912/assets/styles/../imgs/pattern1.jpg");
 }
 
-#section1 {
-	background: linear-gradient(to bottom, rgb(240,240,240) 0%, rgb(235,235,235) 100%);
+/* 조명 */
+#spotLight {
+  width:1024px;
+  height:768px;
+  z-index:9;
+  position:absolute;
 }
 
-#section2 {
-	background: linear-gradient(to bottom, rgb(235,235,235) 0%, rgb(230,230,230) 100%);
-}
 
-#section3 {
-	background: linear-gradient(to bottom, rgb(230,230,230) 0%, rgb(225,225,225) 100%);
-}

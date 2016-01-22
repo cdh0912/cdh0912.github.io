@@ -145,3 +145,4 @@ function rotateArrow(arrow, angle, section) {
 		arrow.addClass(">>>>>");
 	} 
 }
+
