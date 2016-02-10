@@ -61,18 +61,14 @@ src: local('brandon-grotesque'), url("../fonts/brandongrotesque-black-webfont.tt
 	width: 18px;
 	height: 18px;
 	background-color: #fff;
-	
 	border-radius: 100%;
 	display: inline-block;
-	-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 	animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 }
 .spinner .bounce1 {
-	-webkit-animation-delay: -0.32s;
 	animation-delay: -0.32s;
 }
 .spinner .bounce2 {
-	-webkit-animation-delay: -0.16s;
 	animation-delay: -0.16s;
 }
 @-webkit-keyframes sk-bouncedelay {
@@ -126,13 +122,15 @@ h1 {
 
 header {
 	opacity: 1;
-	width: 100%;
-	height: 60px;
-	padding: 7.5px 1%;
+	width: 55px;
+	height: 55px;
+	margin: 7.5px;
+	padding: 5px;
+	border-radius: 100%;
     position: absolute;
     top: 0px;
     z-index: 999;
-    transition: 0.5s ease;
+	transition: 0.5s ease;
 }
 
 header a, header a:hover {
@@ -169,24 +167,21 @@ header #logo {
     right: 14px;
 	width: 20px;
 	height: 20px;
-    border-top: 6px solid #444;
-    border-right: 6px solid #444;
+    border-top: 6px solid #fff;
+    border-right: 6px solid #fff;
     border-radius: 1px;
 }
 .fp-controlArrow {
 	top: 53.2%;
     transition: 0.25s ease-in-out;
-    -webkit-transition: 0.25s ease-in-out;
-    -moz-transition: 0.25s ease-in-out;
-    -o-transition: 0.25s ease-in-out;
 }
 .fp-controlArrow:hover {
     right: 14px;
     top: 52.95%;
 	width: 22px;
 	height: 22px;
-    border-top: 7px solid #444;
-    border-right: 7px solid #444;
+    border-top: 7px solid #fff;
+    border-right: 7px solid #fff;
 	transition-property: transform;
 	transition-duration: 0.1s;
 }
@@ -198,19 +193,49 @@ header #logo {
     z-index: 3;
     opacity: 0.7;
     transform: rotate(-45deg);
-    color: #444;
+    color: #fff;
 }
 
-/* 네비게이션 위치, 색상 */
-#fp-nav.left {
-	left: 6px;
+/* 블럭 네비게이션 */
+#blockNavigation {
+	width: 52px;
+	height: 130px;
+	position: fixed;
+	top: 50%;
+	left: 9px;
+	margin-top: -62px;
+	z-index: 999;
 }
-.fp-slidesNav.bottom {
-	bottom: 9px;
+#blockNavigation .area {
+	float: left;
+	width: 12px;
+	height:	12px;
+	margin: 6px;
 }
-#fp-nav ul li a span, .fp-slidesNav ul li a span, .fp-tooltip left {
-	background: #444;
+#blockNavigation .block {
+	display: block;
+	top: 50%;
+	left: 50%;
+	width: 4px;
+	height:	4px;
+	margin: 4px;
+	border-radius: 100%;
+	background: #fff;
+	transition: all 0.1s ease-in-out;
+	box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
 }
+#blockNavigation .active {
+	width: 12px !important;
+	height:	12px !important;
+	margin: 0px !important;
+}
+#blockNavigation .hover {
+	width: 10px;
+	height:	10px;
+	margin: 1px;
+}
+
+
 
 /* 클릭이미지 */
 .clickImg {
@@ -225,24 +250,6 @@ header #logo {
     width: 100%;
 }
 
-/* 블럭 네비게이션 */
-#blockNavigation {
-	width: 80px;
-	height: 120px;
-	position: fixed;
-	bottom: 2%;
-	right: 2%;
-	z-index: 999;
-/* 	background: #ffd600; */
-}
-#blockNavigation .block {
-	float: left;
-	width: 17px;
-	height:	17px;
-	margin: 6px;
-	
-	background: #F8BA02;
-}
 
 /* iframe */
 iframe {
@@ -265,13 +272,15 @@ iframe {
 	background-color: rgba(0,0,0,0.5);
 }
 
+
+/* 페이지 배경 */
 #section0 {
 	/* background: #222222; */
 	background-image: url('../imgs/parallax-banner-1.jpg');
 	background-position: 50% 0px;
     background-attachment: fixed !important;
     background-size: cover !important;
-    transition: 1s ease;
+    transition: 0.8s ease;
 }
 
 #section0 .parallax-overlay {
@@ -283,4 +292,11 @@ iframe {
     background-image: url('../imgs/overlay-pattern.png');
     background-repeat: repeat;
     background-attachment: scroll;
+}
+
+#section2 #slide1 {
+	background-image: url('../imgs/MoaDo_Introduce.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }

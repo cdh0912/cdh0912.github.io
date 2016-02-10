@@ -44,12 +44,13 @@
 		//fullpage.js
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
-				anchors: ['Intro', 'DreamCatcher', 'Moado', 'Profile'], 
+				scrollingSpeed: 800,
+				anchors: ['Intro', 'DreamCatcher', 'MoaDo', 'BongJungDong', 'Profile']
+				/* ,
 				navigation: true,
 				slidesNavigation: true,
 				navigationPosition: 'left',
-				navigationTooltips: ['Intro', 'DreamCatcher', 'Moado', 'Profile'],
-				scrollingSpeed: 1000
+				navigationTooltips: ['Intro', '드림캐처', '모아두', '봉정동', 'Contact'] */
 			});
 		});
 	</script>
@@ -58,7 +59,7 @@
 	
 	<!-- 헤더 -->
 	<header>
-		<a href="http://cdh0912.github.io">
+		<a href="#Intro">
 			<img id="logo" src="assets/imgs/dh-side-white.png"/>
 		</a>
 	</header>
@@ -72,14 +73,31 @@
 	
 	<!-- 네비게이션 -->
 	<div id="blockNavigation">
-		<div id="block1" class="block" href="#"></div>
-		<div id="block2" class="block" href="#"></div>
-		<div id="block2-1" class="block" href="#"></div>
-		<div id="block3" class="block" href="#"></div>
-		<div id="block3-1" class="block" href="#"></div>
-		<div id="block4" class="block" href="#"></div>
+		<a id="nav_Intro" class="area" href="#Intro">
+			<span class="block"></span>
+		</a><a class="area"></a>
+		<a id="nav_DreamCatcher" class="area" href="#DreamCatcher">
+			<span class="block"></span>
+		</a>
+		<a id="nav_DreamCatcher_1" class="area" href="#DreamCatcher/1">
+			<span class="block"></span>
+		</a>
+		<a id="nav_MoaDo" class="area" href="#MoaDo">
+			<span class="block"></span>
+		</a>
+		<a id="nav_MoaDo_1" class="area" href="#MoaDo/1">
+			<span class="block"></span>
+		</a>
+		<a id="nav_BongJungDong" class="area" href="#BongJungDong">
+			<span class="block"></span>
+		</a><a class="area"></a>
+		<a id="nav_Profile" class="area" href="#Profile">
+			<span class="block"></span>
+		</a>
 	</div>
-
+	
+	
+	
 	<!-- 컨텐츠 시작 -->
 	<div id="fullpage" class="">
 		
@@ -132,11 +150,19 @@
 			</div>
 		</div>
 		
+	<!-------------------봉정동----------------------->
+		<div class="section" id="section3" style="background:#96867C">
+			<div class="intro">
+				<h1>BongJungDong</h1>
+				df
+			</div>
+		</div>
+		
 	<!-------------------프로필 & contact----------------------->
-		<div class="section" id="section3" style="background:#34495E">
+		<div class="section" id="section4" style="background:#34495E">
 			<div class="intro">
 				<h1>Profile with photo</h1>
-				액자
+				df	
 			</div>
 		</div>
 		
