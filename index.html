@@ -11,8 +11,8 @@
 	<meta name="pinterest" content="nopin" />
 	
 	<!-- STYLE -->
-	<link rel="icon" href="assets/imgs/dh.ico" />
-	<link rel="icon" href="assets/imgs/dh.png" sizes="192x192" type="image/png"/>
+	<link rel="icon" href="assets/imgs/icon.ico" />
+	<link rel="icon" href="assets/imgs/icon.png" sizes="192x192" type="image/png"/>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/styles/jquery.fullPage.css" />
 	<link rel="stylesheet" type="text/css" href="assets/styles/style.css">
@@ -49,14 +49,20 @@
 				slidesNavigation: true,
 				navigationPosition: 'left',
 				navigationTooltips: ['Intro', 'DreamCatcher', 'Moado', 'Profile'],
-				scrollingSpeed: 1700
+				scrollingSpeed: 1000
 			});
 		});
 	</script>
 </head>
-
 <body id="body">
 	
+	<!-- 헤더 -->
+	<header>
+		<a href="http://cdh0912.github.io">
+			<img id="logo" src="assets/imgs/dh-side-white.png"/>
+		</a>
+	</header>
+
 	<!-- 로딩애니메이션 -->
 	<div class="spinner">
 		<div class="bounce1"></div>
@@ -64,126 +70,73 @@
 		<div class="bounce3"></div>
 	</div>
 	
-	<!-- 조명 -->
-	<!-- <div id="spotLight"></div> -->
+	<!-- 네비게이션 -->
+	<div id="blockNavigation">
+		<div id="block1" class="block" href="#"></div>
+		<div id="block2" class="block" href="#"></div>
+		<div id="block2-1" class="block" href="#"></div>
+		<div id="block3" class="block" href="#"></div>
+		<div id="block3-1" class="block" href="#"></div>
+		<div id="block4" class="block" href="#"></div>
+	</div>
 
 	<!-- 컨텐츠 시작 -->
 	<div id="fullpage" class="">
+		
 	
 	<!-------------------인트로----------------------->
 		<div class="section" id="section0">
-			<div class="captionFrame">
-				<div class="caption" style="background:#222222">
-					<div class="intro">
-						<p style="text-align:right;">dong&nbsp;&nbsp;</p>
-					</div>
-				</div>
+			<div class="parallax-overlay"></div>
+			
+			<div class="metro">
+			
 			</div>
-			<div class="captionFrame">
-				<div class="caption" style="background:#222222">
-					<div class="intro">
-						<p style="text-align:left;">&nbsp;&nbsp;ho</p>
-					</div>
-				</div>
-			</div>
-			<div class="pictureFrame">
-				<div class="caption" style="background:#222222">
-					<div class="intro">
-						<p>Personal records ↓ </p>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 	
 	<!-------------------드림캐처---------------------->
 		<div class="section" id="section1">
-		    <div class="slide" id="slide1">
-		    	<div class="pictureFrame">
-					<div class="picture" style="background:#AA5D82">
-						<div class="clickImg">
-							<img src="assets/imgs/click-white.png">
-						</div>
-						<div class="intro">
-							<h1>DREAMCATCHER</h1>
-							<p>dreamcatcher dreamcatcher dreamcatcher dreamcatcher</p>
-						</div>
-					</div>
+		    <div class="slide" id="slide1" style="background:#AA5D82">
+				<div class="clickImg">
+					<img src="assets/imgs/click-white.png">
 				</div>
-		    	<div class="captionFrame">
-					<div class="caption picture" style="background:#AA5D82">
-						<div class="clickImg">
-							<img src="assets/imgs/click-white.png">
-						</div>
-						<div class="intro">
-							<h1>DREAMCATCHER</h1>
-							<p>dreamcatcher dreamcatcher dreamcatcher dreamcatcher</p>
-						</div>
-					</div>
+				<div class="intro">
+					<h1>DREAMCATCHER</h1>
+					<p>dreamcatcher dreamcatcher dreamcatcher dreamcatcher</p>
 				</div>
 			</div>
 		    <div class="slide" id="slide2">
-		    	<div class="pictureFrame" style="background:#963463">
-					<div class="picture" style="background:#BD427D">
-						<iframe src="dreamcatcher/map.html"></iframe>
-					</div>
+				<div id="dc_openImg">
+					<span>open it</span>
 				</div>
+				<iframe id="dc_iFrame" data-src="dreamcatcher/map.html" src="about:blank"></iframe>
 			</div>
 		</div>
 		
 	<!-------------------모아두----------------------->
 		<div class="section" id="section2">
 		    <div class="slide" id="slide1">
-		    	<div class="pictureFrame">
-					<div class="picture">
-						<div class="clickImg">
-							<img src="assets/imgs/click-white.png">
-						</div>
-						<div class="intro">
-							<h1>MoaDo </h1>
-							<p style="font-family: PT Sans Narrow; ">팀 Moa서 Do 프로젝트 !</p>
-						</div>
-					</div>
+				<div class="clickImg">
+					<img src="assets/imgs/click-white.png">
+				</div>
+				<div class="intro">
+					<h1>MoaDo </h1>
+					<p style="font-family: PT Sans Narrow; ">팀 Moa서 Do 프로젝트 !</p>
 				</div>
 			</div>
 		    <div class="slide" id="slide2">
-		    	<div class="pictureFrame" style="background:#34495E">
-					<div class="picture">
-						<iframe src="moado/projectMain.html"></iframe>
-					</div>
+				<div id="moa_openImg">
+					<span>open it</span>
 				</div>
+				<iframe id="moa_iFrame" data-src="moado/projectMain.html" src="about:blank"></iframe>
 			</div>
 		</div>
 		
-	<!-------------------프로필----------------------->
-		<div class="section" id="section3">
-			<div class="captionFrame">
-				<div class="caption" style="background:#34495E">
-					<div class="intro">
-						캔버스
-					</div>
-				</div>
-			</div>
-			<div class="captionFrame">
-				<div class="caption" style="background:#34495E">
-					<div class="intro">
-						캔버스
-					</div>
-				</div>
-			</div>
-			<div class="captionFrame">
-				<div class="caption" style="background:#34495E">
-					<div class="intro">
-						액자
-					</div>
-				</div>
-			</div>
-			<div class="captionFrame">
-				<div class="caption" style="background:#34495E">
-					<div class="intro">
-						<h1>Profile with photo</h1>
-						액자
-					</div>
-				</div>
+	<!-------------------프로필 & contact----------------------->
+		<div class="section" id="section3" style="background:#34495E">
+			<div class="intro">
+				<h1>Profile with photo</h1>
+				액자
 			</div>
 		</div>
 		

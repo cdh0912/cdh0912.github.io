@@ -23,10 +23,11 @@ var angle1 = +45;
 var angle2 = +45;
 var bodyTag;
 var bodyClassName;
-var currSection;
+var currSection = 'Intro';
 var currSlide;
 var lastSection;
 var lastSlide;
+
 
 $(window).load(function(){
 	
@@ -85,7 +86,23 @@ $(window).load(function(){
 	//로딩애니메이션
 	$(".spinner").fadeOut();
 	
+	//open div클릭시 iframe 로드 
+	$("#dc_openImg").click(function() {
+		var iframe = $("#dc_iFrame");
+		iframe.attr('src', iframe.data("src"));
+		$(this).remove();
+	});
+	$("#moa_openImg").click(function() {
+		var iframe = $("#moa_iFrame");
+		iframe.attr('src', iframe.data("src"));
+		$(this).remove();
+	});
+	
+	
 });
+
+
+
 
 
 function addClassNameListener(elemId) {
@@ -116,6 +133,18 @@ function addClassNameListener(elemId) {
 				rotateArrow($("#section2 .fp-next"), angle2, 2);
 			}
 			
+			//섹션0 배경사진 이동
+			if( currSection == 'Intro') {
+				$("#section0").css("background-position", "50% 0px");
+				$("header").css("background","transparent");
+			} else {
+				$("#section0").css("background-position", "50% 100px");
+				$("header").css("background","rgba(0, 0, 0, 0.2)");
+			}
+			
+			console.log( currSection );
+			
+			
 			lastClassName = className;
 		//	alert("lastSection: "+lastSection+"\n"+"lastSlide: "+lastSlide+"\n"+"currSection: "+currSection+"\n"+"currSlide: "+currSlide);
 		}
@@ -145,4 +174,3 @@ function rotateArrow(arrow, angle, section) {
 		arrow.addClass(">>>>>");
 	} 
 }
-
