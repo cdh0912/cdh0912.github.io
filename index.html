@@ -10,18 +10,20 @@
 	<meta name="Resource-type" content="Document" />
 	<meta name="pinterest" content="nopin" />
 	
+<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	-->
+	
 	<!-- STYLE -->
 	<link rel="icon" href="assets/imgs/icon.ico" />
 	<link rel="icon" href="assets/imgs/icon.png" sizes="192x192" type="image/png"/>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/styles/jquery.fullPage.css" />
 	<link rel="stylesheet" type="text/css" href="assets/styles/style.css">
 
 	<!-- JS -->
 	<script type="text/javascript" src="assets/js/prefixfree.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://s.codepen.io/assets/libs/modernizr.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.slimscroll.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
 	<script type="text/javascript" src="assets/js/cdh0912.js"></script>
@@ -59,9 +61,9 @@
 	
 	<!-- 헤더 -->
 	<header>
-		<a href="#Intro">
-			<img id="logo" src="assets/imgs/dh-side-white.png"/>
-		</a>
+		<div id="logo">
+			<a href="#Intro"></a>
+		</div>
 	</header>
 
 	<!-- 로딩애니메이션 -->
@@ -100,27 +102,42 @@
 	
 	<!-- 컨텐츠 시작 -->
 	<div id="fullpage" class="">
-		
 	
 	<!-------------------인트로----------------------->
 		<div class="section" id="section0">
-			<div class="parallax-overlay"></div>
-			
-			<div class="metro">
-			
+			<!-- 패턴 -->
+			<div class="pattern-overlay">
+				<!-- 메트로 시작 -->
+				<div id="accordion"> 
+					<div id="tile_intro" class="tile" data-href="#Intro">Intro</div>
+					<div id="tile_dc" class="tile" data-href="#DreamCatcher">DC</div>
+					<div id="tile_dc_detail" class="tile" data-href="#DreamCatcher/1">DC img</div>
+					<div id="tile_moa" class="tile" data-href="#MoaDo">모아두</div>
+					<div id="tile_moa_detail" class="tile" data-href="#MoaDo/1">MoaDo img</div>
+					<div id="tile_bjd" class="tile" data-href="#BongJungDong">봉정동</div>
+					<div id="tile_profile" class="tile" data-href="#Profile">프로필</div>
+				</div>
+				<!-- 메트로 끝 -->
+				
+				<!-- 사람 위에 말풍선 svg애니메이션 넣기
+					 말풍선안에 Hello !
+					 그 후 Dong-ho Jo(큰폰트)<br> Front-end Developer(작은폰트) 글자 떨어지며 나타나게
+					 -->
 			</div>
-			
 		</div>
 	
 	<!-------------------드림캐처---------------------->
 		<div class="section" id="section1">
-		    <div class="slide" id="slide1" style="background:#AA5D82">
-				<div class="clickImg">
-					<img src="assets/imgs/click-white.png">
-				</div>
-				<div class="intro">
-					<h1>DREAMCATCHER</h1>
-					<p>dreamcatcher dreamcatcher dreamcatcher dreamcatcher</p>
+		    <div class="slide" id="slide1">
+				<!-- 패턴 -->
+				<div class="pattern-overlay">
+					<div class="clickImg">
+						<img src="assets/imgs/clickme_white.png">
+					</div>
+					<div class="intro">
+						<h1>DREAMCATCHER</h1>
+						<p>dreamcatcher dreamcatcher dreamcatcher dreamcatcher</p>
+					</div>
 				</div>
 			</div>
 		    <div class="slide" id="slide2">
@@ -134,14 +151,17 @@
 	<!-------------------모아두----------------------->
 		<div class="section" id="section2">
 		    <div class="slide" id="slide1">
-				<div class="clickImg">
-					<img src="assets/imgs/click-white.png">
+		    	<!-- 패턴 -->
+				<div class="pattern-overlay">
+					<div class="clickImg">
+						<img src="assets/imgs/clickme_white.png">
+					</div>
+					<div class="intro">
+						<h1>MoaDo </h1>
+						<p style="font-family: PT Sans Narrow; ">팀 Moa서 Do 프로젝트 !</p>
+					</div>
 				</div>
-				<div class="intro">
-					<h1>MoaDo </h1>
-					<p style="font-family: PT Sans Narrow; ">팀 Moa서 Do 프로젝트 !</p>
-				</div>
-			</div>
+			</div>		
 		    <div class="slide" id="slide2">
 				<div id="moa_openImg">
 					<span>open it</span>
@@ -165,7 +185,6 @@
 				df	
 			</div>
 		</div>
-		
 		
 	<!---------------------끝------------------------>
 	</div>

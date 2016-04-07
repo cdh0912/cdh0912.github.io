@@ -99,7 +99,6 @@ $(window).load(function(){
   			}
    	);
 	
-   	
 	
 	
 	//////////////////// etc ////////////////////
@@ -118,6 +117,15 @@ $(window).load(function(){
 		iframe.attr('src', iframe.data("src"));
 		$(this).remove();
 	});
+	
+	//Page move when click metro tile
+	$(".tile").click(function() {
+		var address = $(this).data("href");
+		location.href = address;
+	})
+
+	//effect when mouse over metro tile
+	
 	
 	//body의 className 변경으로 페이지 이동을 감지하고, 모션 조작
 	addClassNameListener("body");
@@ -187,7 +195,6 @@ function addClassNameListener(elemId) {
 				$("#section0").css("background-position", "50% 100px");
 				$("header").css("background","rgba(0, 0, 0, 0.2)");
 			}
-			
 			
 		}
 	},10);

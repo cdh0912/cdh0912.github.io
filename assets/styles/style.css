@@ -1,92 +1,114 @@
+/* 
+2016 조동호 개인웹페이지
+
+<<< 코딩 순서 >>>
+position, float
+width, height
+top, right, left, bottom
+margin, padding
+border
+text
+background ( -image , -position , -repeat , -size, -attachment )
+opacity, z-index, display, visibility
+transition, transform, animation
+box-shadow
+
+<<< 벤더 프리픽스 >>>
+assets/js/prefixfree.min.js 라이브러리 사용
+
+<<< 미디어 >>>
+
+
+*/
 
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @font-face {
-  font-family: 'Jeju Gothic';
+  font-family: "Jeju Gothic";
   font-style: normal;
   font-weight: 400;
   src: url(//fonts.gstatic.com/ea/jejugothic/v3/JejuGothic-Regular.eot);
-  src: url(//fonts.gstatic.com/ea/jejugothic/v3/JejuGothic-Regular.eot?#iefix) format('embedded-opentype'),
-       url(//fonts.gstatic.com/ea/jejugothic/v3/JejuGothic-Regular.woff2) format('woff2'),
-       url(//fonts.gstatic.com/ea/jejugothic/v3/JejuGothic-Regular.woff) format('woff'),
-       url(//fonts.gstatic.com/ea/jejugothic/v3/JejuGothic-Regular.ttf) format('truetype');
+  src: url(//fonts.gstatic.com/ea/jejugothic/v3/JejuGothic-Regular.eot?#iefix) format("embedded-opentype"),
+   url(//fonts.gstatic.com/ea/jejugothic/v3/JejuGothic-Regular.woff2) format("woff2"),
+   url(//fonts.gstatic.com/ea/jejugothic/v3/JejuGothic-Regular.woff) format("woff"),
+   url(//fonts.gstatic.com/ea/jejugothic/v3/JejuGothic-Regular.ttf) format("truetype");
 }
 
 @font-face {
 font-family: brandon-grotesque;
 font-style: normal;
 font-weight: 100;
-src: url("../fonts/Brandon_thin.otf") format('opentype');
+src: url("../fonts/Brandon_thin.otf") format("opentype");
 }
 
 @font-face {
 font-family: brandon-grotesque;
 font-style: normal;
 font-weight: 300;
-src: url("../fonts/Brandon_light.otf") format('opentype');
+src: url("../fonts/Brandon_light.otf") format("opentype");
 }
 
 @font-face {
 font-family: brandon-grotesque;
 font-style: normal;
 font-weight: 500;
-src: url("../fonts/Brandon_med.otf") format('opentype');
+src: url("../fonts/Brandon_med.otf") format("opentype");
 }
 
 @font-face {
 font-family: brandon-grotesque;
 font-style: normal;
 font-weight: 700;
-src: url("../fonts/Brandon_bld.otf") format('opentype');
+src: url("../fonts/Brandon_bld.otf") format("opentype");
 }
 
 @font-face {
 font-family: brandon-grotesque;
 font-style: normal;
 font-weight: 900;
-src: local('brandon-grotesque'), url("../fonts/brandongrotesque-black-webfont.ttf") format('truetype');
+src: local("brandon-grotesque"), url("../fonts/brandongrotesque-black-webfont.ttf") format("truetype");
 }
 
 /* 로딩애니메이션 */
 .spinner {
-	position: fixed;
-	text-align: center;
-	z-index: 9999;
-	overflow: auto;
-	padding-top: calc(50vh - 29px);
-	width: 100%;
-	height: 100vh;
-	background-color: rgba(0,0,0,0.9);
+position: fixed;
+width: 100%;
+height: 100vh;
+padding-top: calc(50vh - 29px);
+text-align: center;
+overflow: auto;
+z-index: 9999;
+background-color: rgba(0,0,0,0.9);
 }
 .spinner > div {
-	width: 18px;
-	height: 18px;
-	background-color: #fff;
-	border-radius: 100%;
-	display: inline-block;
-	animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+width: 18px;
+height: 18px;
+background-color: #fff;
+border-radius: 100%;
+display: inline-block;
+animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 }
 .spinner .bounce1 {
-	animation-delay: -0.32s;
+animation-delay: -0.32s;
 }
 .spinner .bounce2 {
-	animation-delay: -0.16s;
+animation-delay: -0.16s;
 }
 @-webkit-keyframes sk-bouncedelay {
-	0%, 80%, 100% { -webkit-transform: scale(0) }
-	40% { -webkit-transform: scale(1.0) }
+0%, 80%, 100% { -webkit-transform: scale(0) }
+40% { -webkit-transform: scale(1.0) }
 }
 @keyframes sk-bouncedelay {
   0%, 80%, 100% { 
-	  -webkit-transform: scale(0);
-	  transform: scale(0);
-	} 40% { 
-	  -webkit-transform: scale(1.0);
-	  transform: scale(1.0);
-	}
+  -webkit-transform: scale(0);
+  transform: scale(0);
+} 40% { 
+  -webkit-transform: scale(1.0);
+  transform: scale(1.0);
+}
 }
 @keyframes rotate {
-    from { transform: rotate(15deg) }
-    to { transform: rotate(375deg) }	
+from { transform: rotate(15deg) }
+to { transform: rotate(375deg) }
 }
 
 @media (max-width: 900px) {
@@ -109,194 +131,249 @@ src: local('brandon-grotesque'), url("../fonts/brandongrotesque-black-webfont.tt
 }
 
 body {
-	font-family: 'Jeju Gothic', serif;
-	background: #fff;
+font-family: "Jeju Gothic", serif;
+background: #fff;
 }
 
 h1 {
-	font-size: 2.8rem;
-	font-family: "brandon-grotesque", sans-serif;
-	color: #fff;
-	margin:0;
-}
-
-header {
-	opacity: 1;
-	width: 55px;
-	height: 55px;
-	margin: 7.5px;
-	padding: 5px;
-	border-radius: 100%;
-    position: absolute;
-    top: 0px;
-    z-index: 999;
-	transition: 0.5s ease;
-}
-
-header a, header a:hover {
-    text-decoration:none !important;
-}
-
-header #logo {
-    width: 45px;
+font-size: 4.8rem;
+font-family: "brandon-grotesque", sans-serif;
+font-weight: 700;
+color: #fff;
+margin:0;
 }
 
 .intro p{
-	color: #fff;
-	margin: 0px;
+color: #fff;
+margin: 0px;
 }
 
-.section{
-	text-align:center;
+.section {
+height: 100% !important;
+text-align:center;
 }
 
-.controlArrow.prev {
-	left: 55px;
+
+/* HEADER */
+header {
+position: fixed;
+width: 55px;
+height: 55px;
+top: 7px;
+left: 7px;
+border-radius: 100%;
+z-index: 999;
+transition: 0.2s ease;
+text-decoration:none !important;
 }
-.controlArrow.next{
-	right: 55px;
+header:hover {
+width: 43px;
+height: 43px;
+top: 13px;
+left: 13px;
+background: rgba(0, 0, 0, 0.5) !important;
+}
+
+header a {
+position: absolute;
+width: 100%;
+height: 100%;
+}
+
+header #logo {
+position: fixed;
+width: 45px;
+height: 45px;
+top: 12px;
+left: 12px;
+transition: 0.6s ease;
+background-size: contain;
+background-image: url("../imgs/logo_side_white.png");
 }
 
 
 /* 슬라이드 화살표 */
 .fp-controlArrow.fp-prev {
-	border: 0px;
-	border-color: rgba(0,0,0,0);
+border: 0px;
+border-color: rgba(0,0,0,0);
 }
 .fp-controlArrow.fp-next {
-    right: 14px;
-	width: 20px;
-	height: 20px;
-    border-top: 6px solid #fff;
-    border-right: 6px solid #fff;
-    border-radius: 1px;
+width: 20px;
+height: 20px;
+right: 14px;
+border-top: 6px solid #fff;
+border-right: 6px solid #fff;
+border-radius: 1px;
 }
 .fp-controlArrow {
-	top: 53.2%;
-    transition: 0.25s ease-in-out;
+top: 53.2%;
+transition: 0.25s ease-in-out;
 }
 .fp-controlArrow:hover {
-    right: 14px;
-    top: 52.95%;
-	width: 22px;
-	height: 22px;
-    border-top: 7px solid #fff;
-    border-right: 7px solid #fff;
-	transition-property: transform;
-	transition-duration: 0.1s;
+width: 22px;
+height: 22px;
+right: 14px;
+top: 52.95%;
+border-top: 7px solid #fff;
+border-right: 7px solid #fff;
+transition-property: transform;
+transition-duration: 0.1s;
 }
 .arrowText {
-    position: absolute;
-    display: none;
-    right: 11px;
-    top: 14px;
-    z-index: 3;
-    opacity: 0.7;
-    transform: rotate(-45deg);
-    color: #fff;
+position: absolute;
+display: none;
+right: 11px;
+top: 14px;
+z-index: 3;
+opacity: 0.7;
+transform: rotate(-45deg);
+color: #fff;
 }
+
 
 /* 블럭 네비게이션 */
 #blockNavigation {
-	width: 52px;
-	height: 130px;
-	position: fixed;
-	top: 50%;
-	left: 9px;
-	margin-top: -62px;
-	z-index: 999;
+width: 52px;
+height: 130px;
+position: fixed;
+top: 50%;
+left: 9px;
+margin-top: -62px;
+z-index: 999;
 }
 #blockNavigation .area {
-	float: left;
-	width: 12px;
-	height:	12px;
-	margin: 6px;
+float: left;
+width: 12px;
+height:12px;
+margin: 6px;
 }
 #blockNavigation .block {
-	display: block;
-	top: 50%;
-	left: 50%;
-	width: 4px;
-	height:	4px;
-	margin: 4px;
-	border-radius: 100%;
-	background: #fff;
-	transition: all 0.1s ease-in-out;
-	box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
+display: block;
+width: 4px;
+height:4px;
+top: 50%;
+left: 50%;
+margin: 4px;
+border-radius: 100%;
+background: #fff;
+transition: all 0.1s ease-in-out;
+box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
 }
 #blockNavigation .active {
-	width: 12px !important;
-	height:	12px !important;
-	margin: 0px !important;
+width: 12px !important;
+height:12px !important;
+margin: 0px !important;
 }
 #blockNavigation .hover {
-	width: 10px;
-	height:	10px;
-	margin: 1px;
+width: 10px;
+height:10px;
+margin: 1px;
 }
-
 
 
 /* 클릭이미지 */
 .clickImg {
-    top: 10%;
-    right: 55%;
-    width: 9%;
-    max-width: 200px;
-    position: absolute;
-	z-index: 999;
+top: 10%;
+right: 55%;
+width: 9%;
+max-width: 200px;
+position: absolute;
+z-index: 999;
 }
 .clickImg img {
-    width: 100%;
+width: 100%;
 }
-
 
 /* iframe */
 iframe {
-	width: calc(100% - 20px);
-    height: calc(100% - 20px);
-    border: 0px;
-    margin: 10px;
-    padding: 7px;
+width: calc(100% - 20px);
+height: calc(100% - 20px);
+border: 0px;
+margin: 10px;
+padding: 7px;
 }
 #section1 #slide2 iframe {
-	background: rgb(189, 66, 125);
+background: rgb(189, 66, 125);
 }
 #section2 #slide2 iframe {
-	background: rgb(52, 73, 94);
+background: rgb(52, 73, 94);
 }
 #dc_openImg, #moa_openImg {
-	width: calc(50% - 20px);
-	height: calc(100% - 20px);
-	position: absolute;
-	background-color: rgba(0,0,0,0.5);
+position: absolute;
+width: calc(50% - 20px);
+height: calc(100% - 20px);
+background-color: rgba(0,0,0,0.5);
 }
 
+/* accordion (section0) */
+#accordion {
+position: absolute;
+width: 60%;
+top: 16%;
+left: 25%;
+}
+
+#accordion .tile {
+float: left;
+width: 100%;
+height: 15px;
+margin: 3px;
+padding-left: 20px;
+font-size: 0.85rem;
+text-align: left;
+color: #fff;
+line-height: 15px;
+background: rgba(0, 0, 0, 0.4);
+opacity: 0.7;
+transition: 0.2s ease;
+box-shadow: 0px 0px 5px 0px black;
+}
+
+#accordion .tile:hover {
+height: 55px;
+font-size: 1.4rem;
+line-height: 55px;
+}
 
 /* 페이지 배경 */
 #section0 {
-	/* background: #222222; */
-	background-image: url('../imgs/parallax-banner-1.jpg');
-	background-position: 50% 0px;
-    background-attachment: fixed !important;
-    background-size: cover !important;
-    transition: 0.8s ease;
+background-image: url("../imgs/bg_section0.jpg");
+background-position: 50% 0px;
+background-repeat: no-repeat;
+background-size: cover !important;
+background-attachment: fixed !important;
+transition: 0.8s ease;
 }
 
-#section0 .parallax-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../imgs/overlay-pattern.png');
-    background-repeat: repeat;
-    background-attachment: scroll;
+#section1 #slide1 {
+background-image: url("../imgs/bg_section1.jpg");
+background-position: 100% 0px;
+background-repeat: no-repeat;
+background-attachment: fixed !important;
+transition: 0.8s ease;
 }
 
 #section2 #slide1 {
-	background-image: url('../imgs/MoaDo_Introduce.png');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
+/* background-image: url("../imgs/bg_section2.png");
+background-position: center; */
+background-image: url("../imgs/bg_section2.jpg");
+background-position: 50% 0px;
+background-repeat: no-repeat;
+background-attachment: fixed !important;
+transition: 0.8s ease;
+}
+
+.pattern-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: url("../imgs/pattern-overlay.png");
+background-repeat: repeat;
+background-attachment: scroll;
+}
+
+#slide1 .pattern-overlay {
+width:50%;
 }
