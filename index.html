@@ -27,6 +27,7 @@
 	<script type="text/javascript" src="assets/js/jquery.slimscroll.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
 	<script type="text/javascript" src="assets/js/cdh0912.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.drawsvg.js"></script>
 	<script type="text/javascript">
 	/* ※ 페이지 완성 되면 주석 해제
 	
@@ -73,6 +74,8 @@
 		<div class="bounce3"></div>
 	</div>
 	
+	
+	
 	<!-- 네비게이션 -->
 	<div id="blockNavigation">
 		<a id="nav_Intro" class="area" href="#Intro">
@@ -107,22 +110,59 @@
 		<div class="section" id="section0">
 			<!-- 패턴 -->
 			<div class="pattern-overlay">
-				<!-- 메트로 시작 -->
-				<div id="accordion"> 
-					<div id="tile_intro" class="tile" data-href="#Intro">Intro</div>
-					<div id="tile_dc" class="tile" data-href="#DreamCatcher">DC</div>
-					<div id="tile_dc_detail" class="tile" data-href="#DreamCatcher/1">DC img</div>
-					<div id="tile_moa" class="tile" data-href="#MoaDo">모아두</div>
-					<div id="tile_moa_detail" class="tile" data-href="#MoaDo/1">MoaDo img</div>
-					<div id="tile_bjd" class="tile" data-href="#BongJungDong">봉정동</div>
-					<div id="tile_profile" class="tile" data-href="#Profile">프로필</div>
+				<div>
+					<p>
+					사람 위에 말풍선 svg애니메이션 넣기<br>
+					말풍선안에 Hello !<br>
+					그 후 Dong-ho Jo(큰폰트)<br>
+					Front-end Developer(작은폰트) 글자 떨어지며 나타나게<br>
+					하늘에  서 글씨 내려오는건 fullpage.js의 아이폰참고<br><br>
+					
+					currentSection == 일때 css(display:inline)<br>
+					기본css로 display none,transition 1.3s<br>
+					<br>
+					Click me 타이프 애니메이션<br>
+					<br>
+					봉정동은 갤러리스타일로. 썸네일클릭시 modalwindow</p>
 				</div>
-				<!-- 메트로 끝 -->
 				
-				<!-- 사람 위에 말풍선 svg애니메이션 넣기
-					 말풍선안에 Hello !
-					 그 후 Dong-ho Jo(큰폰트)<br> Front-end Developer(작은폰트) 글자 떨어지며 나타나게
-					 -->
+				<div class="wrapper">
+					<svg viewBox="0 0 240 260" style="background:" xmlns="http://www.w3.org/2000/svg" class="svg1">
+					   <g stroke="#FFF" stroke-width="2" fill="none">
+					    <path stroke-dasharray="5,5" transform="rotate(-31 120,111)" stroke="#fff" id="svg_1"
+					    d="
+					    m15,207.5 
+					    l41,-13 
+					    c17,12 38,20 61,20 
+					    c56,0 102,-45 102,-101 
+					    c0,-55 -46,-101 -102,-101 
+					    c-56,0 -102,45 -102,101 
+					    c0,19 5,36 14,52 
+					    l-14,45 
+					    l0,0 z" stroke-width="6.5" />
+						<path id="svg_11" d="m49.87622,96.276134l0.177304,35.106216" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="6.5" stroke="#fff" fill-opacity="null" fill="#fff"/>
+						<path id="svg_11" d="m49.87622,96.276134l0.177304,35.106216" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="6.5" stroke="#fff" fill-opacity="null" fill="#fff"/>
+						<path stroke="#fff" id="svg_12" d="m59.854557,106.71157l0.134432,13.337111" transform="rotate(-89.38964080810547 59.92177391052246,113.380126953125)" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="6.5" fill-opacity="null" fill="#fff"/>
+						<path stroke="#fff" id="svg_13" d="m69.743724,96.100216l0.177304,35.106216" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="6.5" fill-opacity="null" fill="#fff"/>
+						<path id="svg_14" d="m81.566245,96.135289l0.177304,35.106216" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="6.5" stroke="#fff" fill-opacity="null" fill="#fff"/>
+						<path id="svg_17" d="m104.275922,96.199805l0.177304,35.106216" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="6.5" stroke="#fff" fill-opacity="null" fill="#fff"/>
+						<path stroke="#fff" transform="rotate(-89.6119613647461 114.07424163818358,127.8819351196289) " id="svg_18" d="m113.985587,121.393344l0.177304,12.977185" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="6.5" fill-opacity="null" fill="#fff"/>
+						<path stroke="#fff" transform="rotate(-89.28059387207031 91.20366668701172,99.43042755126953) " id="svg_21" d="m91.116329,93.038198l0.174671,12.784462" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="6.5" fill-opacity="null" fill="#fff"/>
+						<path stroke="#fff" transform="rotate(-89.28059387207031 90.75285339355469,113.36886596679688) " id="svg_23" d="m90.67256,107.491911l0.160591,11.753905" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="6.5" fill-opacity="null" fill="#fff"/>
+						<path stroke="#fff" transform="rotate(-89.28059387207031 91.62220764160158,127.94303131103516) " id="svg_24" d="m91.530919,121.261314l0.182581,13.363442" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="6.5" fill-opacity="null" fill="#fff"/>
+						<path stroke="#fff" transform="rotate(-89.6119613647461 135.23553466796875,127.8819351196289) " id="svg_26" d="m135.146876,121.393344l0.177304,12.977185" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="6.5" fill-opacity="null" fill="#fff"/>
+						<path id="svg_27" d="m125.401361,96.070773l0.177304,35.106216" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="6.5" stroke="#fff" fill-opacity="null" fill="#fff"/>
+						<path id="svg_28" d="m144.731789,113.666108c0,-8.287293 5.81768,-15 13,-15c7.18232,0 13,6.712707 13,15c0,8.287293 -5.81768,15 -13,15c-7.18232,0 -13,-6.712707 -13,-15z" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="6.5" stroke="#fff" fill-opacity="null" fill="none"/>
+						<path stroke="#fff" id="svg_30" d="m196.42424,95.948823l-0.066595,26.325835" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="6.5" fill-opacity="null" fill="#fff"/>
+						<path id="svg_44" d="m193.511498,127.441642c0,-1.657459 1.342541,-3 3,-3c1.657459,0 3,1.342541 3,3c0,1.657459 -1.342541,3 -3,3c-1.657459,0 -3,-1.342541 -3,-3z" stroke-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="2" stroke="#fff" fill-opacity="null" fill="none"/>
+					
+					   </g>
+					</svg>
+<script>
+var $svg = $('svg').drawsvg();
+$svg.drawsvg('animate');
+</script>
+				</div>
 			</div>
 		</div>
 	

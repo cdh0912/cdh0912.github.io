@@ -162,7 +162,7 @@ function addClassNameListener(elemId) {
 			
 			
 			
-			var sectionArr = ['Intro', 'DreamCatcher', 'MoaDo', 'BongJungDong', 'Profile'];
+			sectionArr = ['Intro', 'DreamCatcher', 'MoaDo', 'BongJungDong', 'Profile'];
 			
 			//// 네비게이션 css효과 ////
 			//기존 active 제거
@@ -187,14 +187,41 @@ function addClassNameListener(elemId) {
 			
 			
 			//// 배경사진 ////
-			//intro 배경사진 css효과 ---> 마지막으로 작동해야 다른 효과들에 방해없음
+			//배경사진 css효과 ---> 마지막으로 작동해야 다른 효과들에 방해없음
+			
 			if( currSection == 'Intro') {
-				$("#section0").css("background-position", "50% 0px");
 				$("header").css("background","transparent");
-			} else {
-				$("#section0").css("background-position", "50% 100px");
+				$("#section0").css("background-position", "50% 0px");
+				$("#section1 #slide1").css("background-position", "50% 100px");
+				$("#section2 #slide1").css("background-position", "50% 100px");
+			} else if( currSection == 'DreamCatcher') {
 				$("header").css("background","rgba(0, 0, 0, 0.2)");
+				$("#section1 #slide1").css("background-position", "50% 0px");
+				$("#section0").css("background-position", "50% 100px");
+				$("#section2 #slide1").css("background-position", "50% 100px");
+			} else if( currSection == 'MoaDo') {
+				$("header").css("background","rgba(0, 0, 0, 0.2)");
+				$("#section2 #slide1").css("background-position", "50% 0px");
+				$("#section0").css("background-position", "50% 100px");
+				$("#section1 #slide1").css("background-position", "50% 100px");
+			} else {
+				$("header").css("background","rgba(0, 0, 0, 0.2)");
+				$("#section2 #slide1").css("background-position", "50% 100px");
+				$("#section0").css("background-position", "50% 100px");
+				$("#section1 #slide1").css("background-position", "50% 100px");
 			}
+			
+
+			/*
+			obj = [$("#section0"), $("#section1 #slide1"), $("#section2 #slide1")];
+			for(var i=0; i<3; i++) {
+				if(currSection == sectionArr[i]) {
+					obj[i].css("background-position", "50% 0px");
+				} else {
+					obj[i].css("background-position", "50% 100px");
+				}
+			}
+			*/
 			
 		}
 	},10);
