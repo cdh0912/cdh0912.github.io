@@ -353,10 +353,19 @@ background-attachment: scroll;
 width:50%;
 }
 
-.svg1 {
+svg {
 position: fixed;
-width: 192px;
-left: 52%;
-bottom: calc(50% + 10px);
+width: 27%;
+min-width: 200px;
+max-width: 600px;
+left: 50.5vw;
+bottom: 51vh;
+margin: auto;
+opacity: 0.9;
+stroke-width: 1.5px;
+stroke: #fff;
+fill: none;
 }
-
+@media (max-width: 1100px) {
+  svg { left: 53vw; stroke-width: 3px; }
+}
