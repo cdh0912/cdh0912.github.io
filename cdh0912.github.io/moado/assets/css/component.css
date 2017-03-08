@@ -1,0 +1,33 @@
+/* Header */
+.large-header {
+	position: relative;
+	width: 100%;
+	background: #34495e;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	z-index: 1;
+}
+
+.header-placement .large-header {
+	background-image: url('../img/moado_largeHeader_madeByBS.jpg');
+}
+
+.bubble-header .large-header {
+	background-image: url('../img/demo-2-bg.jpg');
+}
+
+.main-title {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	text-align: center;	
+}
+
+.header-placement .main-title {
+	font-size: 50px;
+}

@@ -1,0 +1,103 @@
+/*Prevent fixed top heading*/
+.fixed-top{
+	position: static;
+	margin-top: 0;
+}
+
+.header-line{
+		margin-bottom: 0;
+}
+
+.header--block{
+	margin-bottom: 0;
+}
+
+.header--block .header-line{
+	margin-bottom: 0;
+}
+
+/*Make mobile menu visible*/
+.z-nav__list.open-nav{
+	opacity: 1;
+}
+
+.fadeInUpStart{
+	opacity: 1;
+}
+
+.fadeInStart,
+.zoomInStart{
+	opacity: 1;
+}
+
+/*Special page*/
+.snowfall{
+	display: none;
+}
+
+.icon-info .icon-info-back {
+	display: none;
+}
+
+/*Special pack*/
+.special-pack{
+	background: #fbf4eb;
+}
+
+.special-pack-container{
+	padding-bottom: 92px;
+	padding-top: 50px;
+}
+
+.info-section .image-holder {
+    text-align: center;
+}
+
+.info-section .heading-cascade {
+    padding-top: 110px;
+}
+
+.info-section {
+    overflow: hidden;
+    padding-bottom: 100px;
+    padding-top: 75px;
+}
+
+/* tabs style */
+.tabs-custom nav ul{
+	font-size: 0;
+}
+
+.tabs-custom nav ul li{
+	display: inline-block;
+	width: 20%;
+}
+
+/* special services */
+.icon-info .icon-info-front:hover{
+	background-color: #ff6163;
+}
+
+.opposite-block .stat--additional{
+	margin-right: 40px;
+}
+
+/* Animation fix */
+.fadeInUpStart,
+.fadeInStart,
+.zoomIn,
+.fadeInDownStart,
+.fadeInRightStart,
+.fadeInLeftStart,
+.rotateInStart,
+.rotateInDownLeftStart,
+.rotateInDownRightStart,
+.rollInStart{
+	opacity: 1;
+}
+
+.ns-effect-scale.ns-hide,
+.ns-effect-jelly.ns-hide,
+.ns-effect-exploader .box-inner{
+	opacity: 1;
+}
