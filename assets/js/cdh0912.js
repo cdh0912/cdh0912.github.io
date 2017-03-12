@@ -19,47 +19,71 @@ function makeModal() {
 
  */
 
+var sectionNameArr = ['intro', 'fandream', 'univue', 'dreamcatcher', 'moado'];
 var angle1 = +45;
 var angle2 = +45;
+var angle3 = +45;
+var angle4 = +45;
 var bodyTag;
 var bodyClassName;
 var currSection = 'Intro';
+var currSectionNum = 0;
 var currSlide;
 var lastSection;
 var lastSlide;
+var sections = $(".section");
+var slides = $(".slide");
 
+$(document).ready(function() {
+		/* ※ 페이지 완성 되면 주석 해제
+	
+	//에러페이지
+	window.onerror = function() {
+		document.location.href = "error.html";
+	}
+	
+	try{Typekit.load();}catch(e){}
+	
+		 */
+		
+	//프로토콜 http로 고정
+		if( location.protocol == "https:" ) {
+			document.location.replace("http://cdh0912.github.io");
+		}
+		
+	//fullpage.js
+	$('#fullpage').fullpage({
+		scrollingSpeed: 800,
+		anchors: sectionNameArr
+		/* ,
+		navigation: true,
+		slidesNavigation: true,
+		navigationPosition: 'left',
+		navigationTooltips: ['Intro', '드림캐처', '모아두', '봉정동', 'Contact'] */
+	});
+});
 
 $(window).load(function(){
 	
-	//////////////////// 화살표 ////////////////////
+	//bgm 볼륨 조절
+	document.getElementById("starwarsOST").volume = 0.2;
 	
+	//////////////////// 화살표 ////////////////////
 	//왼쪽 화살표 삭제
 	$(".fp-prev").remove();
 	
-	var arrow1 = $("#section1 .fp-next");
-	var arrow2 = $("#section2 .fp-next");
-	
 	//페이지 로드 시 화살표에 class, style, text 추가
 	$(".fp-next").addClass(">>>>>").css("transform","rotate(45deg)").append("<span class='arrowText'></span>");
-
-	//섹션1 슬라이드 배경을 클릭했을때
-	$("#section1 .slide").on("click", function() {
-		//다음,이전 슬라이드로 이동
-		arrow1.trigger("click");
-		//클릭이미지 삭제
-		$(".clickImg").fadeOut( "400" );
-		//화살표 회전
-		rotateArrow(arrow1, angle1, 1);
-	});
 	
-	//섹션2 슬라이드 배경을 클릭했을때
-	$("#section2 .slide").on("click", function() {
+	//섹션,슬라이드 배경을 클릭했을때
+	$(".section .slide").on("click", function() {
 		//다음,이전 슬라이드로 이동
-		arrow2.trigger("click");
+		var arrow = $(this).closest(".section").find(".fp-next");
+		arrow.trigger("click");
 		//클릭이미지 삭제
 		$(".clickImg").fadeOut( "400" );
 		//화살표 회전
-		rotateArrow(arrow2, angle2, 2);
+		rotateArrow(arrow, "angle"+currSectionNum, currSectionNum);
 	});
 
 	//섹션1,2 화살표 마우스오버 시 텍스트 변경
@@ -105,19 +129,7 @@ $(window).load(function(){
 	
 	//로딩애니메이션
 	$(".spinner").fadeOut();
-	
-	//open div클릭시 iframe 로드 
-	$("#dc_openImg").click(function() {
-		var iframe = $("#dc_iFrame");
-		iframe.attr('src', iframe.data("src"));
-		$(this).remove();
-	});
-	$("#moa_openImg").click(function() {
-		var iframe = $("#moa_iFrame");
-		iframe.attr('src', iframe.data("src"));
-		$(this).remove();
-	});
-	
+		
 	//Page move when click metro tile
 	$(".tile").click(function() {
 		var address = $(this).data("href");
@@ -148,21 +160,24 @@ function addClassNameListener(elemId) {
 			//현재 섹션, 현재 슬라이드 번호 추출
 			bodyClassName = className.split("-");
 			currSection = bodyClassName[2];
+			
+			//현재 섹션이 몇번쨰 섹션인지 검색
+			for(var i=0; i<sectionNameArr.length; i++){
+				if(sectionNameArr[i] == currSection){
+					currSectionNum = i;
+				}
+			}
+			
 			if(bodyClassName.length == 4) {
 				currSlide = bodyClassName[3]; //현재 수평페이지 번호
 			} else {currSlide = 0;}
 			//초기화
 			lastClassName = className;
 			
-			//debug.
-			// console.log( currSection + ", " + currSlide );
+			console.log( currSection + "(" + currSectionNum + ") / " + currSlide );
 			// alert("lastSection: "+lastSection+"\n"+"lastSlide: "+lastSlide+"\n"+"currSection: "+currSection+"\n"+"currSlide: "+currSlide);
 			//scroll 감지 끝//
 			
-			
-			
-			
-			sectionArr = ['Intro', 'DreamCatcher', 'MoaDo', 'BongJungDong', 'Profile'];
 			
 			//// 네비게이션 css효과 ////
 			//기존 active 제거
@@ -176,53 +191,34 @@ function addClassNameListener(elemId) {
 			
 
 			//// 화살표 ////
-			//dc 슬라이드 이동 시 화살표 회전
-			if( lastSection == sectionArr[1] && lastSection == currSection && lastSlide != currSlide ) {
+			if( lastSection == sectionNameArr[1] && lastSection == currSection && lastSlide != currSlide ) {
 				rotateArrow($("#section1 .fp-next"), angle1, 1);
 			}
-			//moado 슬라이드 이동 시 화살표 회전 
-			if( lastSection == sectionArr[2] && lastSection == currSection && lastSlide != currSlide ) {
+			if( lastSection == sectionNameArr[2] && lastSection == currSection && lastSlide != currSlide ) {
 				rotateArrow($("#section2 .fp-next"), angle2, 2);
 			}
-			
-			
-			//// 배경사진 ////
-			//배경사진 css효과 ---> 마지막으로 작동해야 다른 효과들에 방해없음
-			
-			if( currSection == 'Intro') {
-				$("header").css("background","transparent");
-				$("#section0").css("background-position", "50% 0px");
-				$("#section1 #slide1").css("background-position", "50% 100px");
-				$("#section2 #slide1").css("background-position", "50% 100px");
-			} else if( currSection == 'DreamCatcher') {
-				$("header").css("background","rgba(0, 0, 0, 0.2)");
-				$("#section1 #slide1").css("background-position", "50% 0px");
-				$("#section0").css("background-position", "50% 100px");
-				$("#section2 #slide1").css("background-position", "50% 100px");
-			} else if( currSection == 'MoaDo') {
-				$("header").css("background","rgba(0, 0, 0, 0.2)");
-				$("#section2 #slide1").css("background-position", "50% 0px");
-				$("#section0").css("background-position", "50% 100px");
-				$("#section1 #slide1").css("background-position", "50% 100px");
-			} else {
-				$("header").css("background","rgba(0, 0, 0, 0.2)");
-				$("#section2 #slide1").css("background-position", "50% 100px");
-				$("#section0").css("background-position", "50% 100px");
-				$("#section1 #slide1").css("background-position", "50% 100px");
+			if( lastSection == sectionNameArr[3] && lastSection == currSection && lastSlide != currSlide ) {
+				rotateArrow($("#section3 .fp-next"), angle3, 3);
+			}
+			if( lastSection == sectionNameArr[4] && lastSection == currSection && lastSlide != currSlide ) {
+				rotateArrow($("#section4 .fp-next"), angle4, 4);
 			}
 			
-
-			/*
-			obj = [$("#section0"), $("#section1 #slide1"), $("#section2 #slide1")];
-			for(var i=0; i<3; i++) {
-				if(currSection == sectionArr[i]) {
-					obj[i].css("background-position", "50% 0px");
-				} else {
-					obj[i].css("background-position", "50% 100px");
+			
+			if( currSection == sectionNameArr[0]) {
+				$("header #logo").addClass("boxshadow-white");
+			} else {
+				$("header #logo").removeClass("boxshadow-white");
+				
+				//slide1이 보여지면 iframe load
+				if( currSlide == 1 ) {
+					var iframe = $(".section").eq(currSectionNum).find("iframe");
+					if( iframe.attr("src") == "about:blank" ){
+						iframe.attr("src", iframe.data("src"));
+						$(".section").eq(currSectionNum).find(".openImg").remove();
+					}
 				}
 			}
-			*/
-			
 		}
 	},10);
 }
