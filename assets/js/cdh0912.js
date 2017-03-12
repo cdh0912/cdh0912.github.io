@@ -67,6 +67,7 @@ $(window).load(function(){
 	
 	//bgm 볼륨 조절
 	document.getElementById("starwarsOST").volume = 0.2;
+	document.getElementById("starwarsOST").play();
 	
 	//////////////////// 화살표 ////////////////////
 	//왼쪽 화살표 삭제
