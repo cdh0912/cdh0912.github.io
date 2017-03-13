@@ -26,7 +26,7 @@ var angle3 = +45;
 var angle4 = +45;
 var bodyTag;
 var bodyClassName;
-var currSection = 'Intro';
+var currSection = 'intro';
 var currSectionNum = 0;
 var currSlide;
 var lastSection;
