@@ -27,15 +27,11 @@ function scale(){
 		scaleDelta = 0.001; 
 	}
 
-	if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) { //익스프롤러이면
-		$(".starwars-intro").css({"top" : posY + "%", "transform" : "rotateX(" + ang + "deg) scale(" + size/3 + ")"})
-	} else {
-		$(".starwars-intro").css({"top" : posY + "%", "transform" : "rotateX(" + ang + "deg) scale(" + size + ")"})
-	}
+	$(".starwars-intro").css({"top" : posY + "%", "transform" : "rotateX(" + ang + "deg) scale(" + size + ")"})
 
 	if(posY> -30){
 		setTimeout(scale,speed);	
 	}else{
 		$(".starwars-intro").animate({opacity:"0"},500);
-	}	
+	}
 }
