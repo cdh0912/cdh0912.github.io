@@ -225,11 +225,12 @@ h1 {
 	margin:0;
 }
 
-.intro {
+.decription {
 	display: table-cell;
 	vertical-align: middle;
 }
-.intro p{
+.decription p {
+	font-family: PT Sans Narrow;
 	color: #fff;
 	margin: 0px;
 }
@@ -399,29 +400,44 @@ iframe {
 	height: 100% !important;
 	text-align:center;
 }
-.section, .section .slide {
+.slide {
+    position: relative;
+    z-index: 1;
+}
+.section, .slide {
 	transition: 0.8s ease;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: #7f7f7f;
 	background-position: 50% 0;
 }
+.slide:before {
+	content: '';
+	position: absolute;
+	top: 0; left:0; right:0; bottom:0;
+	background: inherit;
+	z-index:-1;
+	-webkit-filter: blur(3px); 
+	-moz-filter: blur(3px);
+	-o-filter: blur(3px);
+	-ms-filter: blur(3px);
+	filter: blur(3px);
+}
 #section0 {
 	background-image: url("../imgs/galaxy.jpg");
 }
 #section1 #slide1 {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.6)), url("../imgs/bg_fandream.png");
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)), url("../imgs/bg_fandream.png");
 }
 #section2 #slide1 {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.6)), url("../imgs/bg_univue.png");
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)), url("../imgs/bg_univue.png");
 }
 #section3 #slide1 {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.6)), url("../imgs/bg_dreamcatcher.jpg");
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)), url("../imgs/bg_dreamcatcher.jpg");
 }
 #section4 #slide1 {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.6)), url("../imgs/bg_moado.png");
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)), url("../imgs/bg_moado.png");
 }
-
 .pattern-overlay {
 	display: table;
 	position: absolute;
@@ -432,12 +448,6 @@ iframe {
 	background-image: url("../imgs/pattern-overlay.png");
 	background-repeat: repeat;
 	background-attachment: scroll;
-}
-#slide1 .pattern-overlay {
-	width:50%;
-}
-.descriptionArea {
-
 }
 .starwars-page {
 	margin: auto;
@@ -471,23 +481,23 @@ iframe {
 }
 
 #audioUse {
-    position: absolute;
-    top: 15px;
-    left: 50%;
-    margin-left: -13px;
-    color: #fff;
-    font-size: 30px;
+	position: absolute;
+	top: 15px;
+	left: 50%;
+	margin-left: -13px;
+	color: #fff;
+	font-size: 30px;
 }
 #audioBox {
 	opacity: 0;
-    position: absolute;
-    top: 19px;
-    width: 100%;
-    transition: 0.5s ease;
+	position: absolute;
+	top: 19px;
+	width: 100%;
+	transition: 0.5s ease;
 }
 #audioBox:hover {
 	opacity: 1;
 }
 audio {
-    width: 30%;
+	width: 30%;
 }
