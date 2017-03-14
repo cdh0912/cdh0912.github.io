@@ -375,13 +375,13 @@ header #logo {
 
 /* 블럭 네비게이션 */
 #blockNavigation {
-	width: 52px;
-	height: 130px;
+	width: 74px;
+	height: 168px;
 	position: fixed;
 	top: 50%;
-	left: 9px;
-	margin-top: -62px;
-	padding: 9px 0 0 3px;
+	left: 20px;
+	margin-top: -83px;
+	padding: 9px 3px;
 	background: rgba(0, 0, 0, 0.15);
 	border-radius: 11px;
 	z-index: 999;
@@ -413,6 +413,18 @@ header #logo {
 	width: 10px;
 	height:10px;
 	margin: 1px;
+}
+.pl24 {
+	padding-left: 24px;
+	padding-right: 0px;
+}
+.pl0 {
+	padding-left: 0px;
+	padding-right: 13px;
+}
+#blockNavigation> div {
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
 }
 
 /* 클릭이미지 */

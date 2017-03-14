@@ -19,7 +19,7 @@ function makeModal() {
 
  */
 
-var sectionNameArr = ['intro', 'fandream', 'univue', 'dreamcatcher', 'moado'];
+var sectionNameArr = ['intro', 'fandream', 'univue', 'dreamcatcher', 'moado', 'contact'];
 var angle1 = +45;
 var angle2 = +45;
 var angle3 = +45;
@@ -43,7 +43,7 @@ $(document).ready(function() {
 
 	//에러페이지
 	window.onerror = function() {
-		document.location.href = "404.html";
+		//document.location.href = "404.html";
 	}
 
 	//프로토콜 http로 고정
@@ -76,7 +76,7 @@ $(document).ready(function() {
 	 * ===================*/
 	
 	//섹션,슬라이드 배경을 클릭했을때
-	$(".section .slide").on("click", function() {
+	$("body").on("click", ".section .slide", function() {
 		//다음,이전 슬라이드로 이동
 		var arrow = $(this).closest(".section").find(".fp-next");
 		arrow.trigger("click");
@@ -86,15 +86,10 @@ $(document).ready(function() {
 		rotateArrow(arrow, "angle"+currSectionNum, currSectionNum);
 	});
 
-	//'클릭하시오' 이미지 제거
-	$(".fp-next").on("click", function() {
-		arrowText.fadeOut("fast");
-	});
-	
-	//블록네비게이션 첫 액티브 지정
-	$("#nav-intro .nav-block").addClass("active");
+	//네비게이션 첫 액티브 지정
+	$("#nav-intro .nav-block").addClass("nav-active");
 
-	//블록네비게이션 마우스오버 css효과
+	//네비게이션 마우스오버 css효과
 	$("#blockNavigation .nav-area").hover(
   			function() {
   				$(this).find(".block").addClass("hover");
@@ -103,33 +98,31 @@ $(document).ready(function() {
   				$(this).find(".block").removeClass("hover");
   			}
    	);
-	
-	
-	
-	//////////////////// etc ////////////////////
-	
-	//로딩애니메이션
-	$(".spinner").fadeOut();
-		
-	//Page move when click metro tile
-	$(".tile").click(function() {
+
+	//네비게이션 클릭 시 페이지 이동
+	$("body").on("click", ".tile", function() {
 		var address = $(this).data("href");
 		location.href = address;
 	})
 
-	//effect when mouse over metro tile
-	
-	
+	//로딩애니메이션
+	$(".spinner").fadeOut();
+		
 	//body의 className 변경으로 페이지 이동을 감지하고, 모션 조작
 	addClassNameListener("body");
 	
-
-	/*======스타워즈======*/
+	//스타워즈 애니메이션 시작
 	starwars();
 	
-	//bgm 볼륨 조절
-	document.getElementById("starwarsOST").volume = 0.2;
-
+	//audio 볼륨 0.2로 세팅. 500ms후에도 intro이면 재생
+	var starwarsOST = document.getElementById("starwarsOST");
+	starwarsOST.volume = 0.2;
+	starwarsOST.pause();
+	setTimeout(function(){
+		if(currSection == "intro") {
+			starwarsOST.play();
+		}
+	},500);
 });
 
 
@@ -169,6 +162,7 @@ function starwars(){
 /*======스타워즈 끝======*/
 
 
+
 function addClassNameListener(elemId) {
 	var elem = document.getElementById(elemId);
 	var lastClassName = elem.className;
@@ -203,15 +197,21 @@ function addClassNameListener(elemId) {
 			//scroll 감지 끝//
 			
 			
-			//// 네비게이션 css효과 ////
-			//기존 active 제거
-			$("#blockNavigation .active").removeClass("active");
+			/*==== 네비게이션 css 제어 ====*/
 			
-			navId = "#nav_" + currSection;
+			navId = "#nav-" + currSection;
+
 			if ( currSlide == 1 ) {
-				navId = navId + "_" + currSlide;
-			} 
-			$("#blockNavigation").find(navId).find(".block").addClass("active");		
+				$("#blockNavigation").find(navId).parent().removeClass("pl24").addClass("pl0");
+				navId = navId + "-" + currSlide;
+			} else {
+				$("#blockNavigation").find(navId).parent().removeClass("pl0").addClass("pl24");
+			}
+			
+			//이전 블록의 active 제거
+			$("#blockNavigation .nav-active").removeClass("nav-active");
+			//현재 블록에 active 추가
+			$("#blockNavigation").find(navId).find(".nav-block").addClass("nav-active");		
 			
 
 			//// 화살표 ////
@@ -231,6 +231,10 @@ function addClassNameListener(elemId) {
 			
 			if( currSection == sectionNameArr[0]) {
 				$("header #logo").addClass("boxshadow-white");
+				setTimeout(function(){
+					document.getElementById("starwarsOST").play();
+				},500);
+				
 			} else {
 				$("header #logo").removeClass("boxshadow-white");
 				
