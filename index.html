@@ -27,7 +27,6 @@
 <script type="text/javascript" src="assets/js/jquery.slimscroll.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
 <script type="text/javascript" src="assets/js/cdh0912.js"></script>
-<script type="text/javascript" src="assets/js/starwarsintro.js"></script>
 
 </head>
 <body id="body">
@@ -50,32 +49,32 @@
 	
 	<!-- 네비게이션 -->
 	<div id="blockNavigation">
-		<a id="nav_intro" class="area" href="#intro">
-			<span class="block"></span>
-		</a><a class="area"></a>
-		<a id="nav_fandream" class="area" href="#fandream">
-			<span class="block"></span>
+		<a id="nav_intro" class="nav-area" href="#intro">
+			<span class="nav-block"></span>
+		</a><a class="nav-area"></a>
+		<a id="nav-fandream" class="nav-area" href="#fandream">
+			<span class="nav-block"></span>
 		</a>
-		<a id="nav_fandream_1" class="area" href="#fandream/1">
-			<span class="block"></span>
+		<a id="nav-fandream-1" class="nav-area" href="#fandream/1">
+			<span class="nav-block"></span>
 		</a>
-		<a id="nav_univue" class="area" href="#univue">
-			<span class="block"></span>
+		<a id="nav-univue" class="nav-area" href="#univue">
+			<span class="nav-block"></span>
 		</a>
-		<a id="nav_#univue_1" class="area" href="#univue/1">
-			<span class="block"></span>
+		<a id="nav-#univue-1" class="nav-area" href="#univue/1">
+			<span class="nav-block"></span>
 		</a>
-		<a id="nav_dreamcatcher" class="area" href="#dreamcatcher">
-			<span class="block"></span>
+		<a id="nav-dreamcatcher" class="nav-area" href="#dreamcatcher">
+			<span class="nav-block"></span>
 		</a>
-		<a id="nav_dreamcatcher_1" class="area" href="#dreamcatcher/1">
-			<span class="block"></span>
+		<a id="nav-dreamcatcher-1" class="nav-area" href="#dreamcatcher/1">
+			<span class="nav-block"></span>
 		</a>
-		<a id="nav_moado" class="area" href="#moado">
-			<span class="block"></span>
+		<a id="nav-moado" class="nav-area" href="#moado">
+			<span class="nav-block"></span>
 		</a>
-		<a id="nav_moado_1" class="area" href="#moado/1">
-			<span class="block"></span>
+		<a id="nav-moado-1" class="nav-area" href="#moado/1">
+			<span class="nav-block"></span>
 		</a>
 	</div>
 	
@@ -92,7 +91,7 @@
 					
 					<span id="audioUse"><i class="fa fa-music" aria-hidden="true"></i></span>
 					<div id="audioBox">
-						<audio id="starwarsOST" controls loop>
+						<audio id="starwarsOST" controls autoplay>
 							<source src="assets/files/starwars-ost-short.mp3" type="audio/mp3">
 						</audio>
 					</div>
@@ -136,7 +135,7 @@
 			</div>
 		    <div class="slide" id="slide2">
 				<div class="openImg"></div>
-				<iframe data-src="http://fandream.co.kr" src="about:blank"></iframe>
+				<iframe id="example-iframe" data-src="http://fandream.co.kr" src="about:blank"></iframe>
 			</div>
 		</div>
 		
@@ -158,7 +157,7 @@
 			</div>
 		    <div class="slide" id="slide2">
 				<div class="openImg"></div>
-				<iframe data-src="http://anyintervue.com" src="about:blank"></iframe>
+				<iframe id="example-iframe" data-src="http://anyintervue.com" src="about:blank"></iframe>
 			</div>
 		</div>
 		
@@ -178,7 +177,7 @@
 			</div>
 		    <div class="slide" id="slide2">
 				<div class="openImg"></div>
-				<iframe data-src="dreamcatcher/map.html" src="about:blank"></iframe>
+				<iframe id="example-iframe" data-src="dreamcatcher/map.html" src="about:blank"></iframe>
 			</div>
 		</div>
 		
@@ -198,7 +197,7 @@
 			</div>		
 		    <div class="slide" id="slide2">
 				<div class="openImg"></div>
-				<iframe data-src="moado/projectMain.html" src="about:blank"></iframe>
+				<iframe id="example-iframe" data-src="moado/projectMain.html" src="about:blank"></iframe>
 			</div>
 
 		</div>

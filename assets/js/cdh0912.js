@@ -35,22 +35,22 @@ var sections = $(".section");
 var slides = $(".slide");
 
 $(document).ready(function() {
-		/* ※ 페이지 완성 되면 주석 해제
+
 	
+	/*======================
+	 * init
+	 * ===================*/
+
 	//에러페이지
 	window.onerror = function() {
-		document.location.href = "error.html";
+		document.location.href = "404.html";
+	}
+
+	//프로토콜 http로 고정
+	if( location.protocol == "https:" ) {
+		document.location.replace("http://cdh0912.github.io");
 	}
 	
-	try{Typekit.load();}catch(e){}
-	
-		 */
-		
-	//프로토콜 http로 고정
-		if( location.protocol == "https:" ) {
-			document.location.replace("http://cdh0912.github.io");
-		}
-		
 	//fullpage.js
 	$('#fullpage').fullpage({
 		scrollingSpeed: 800,
@@ -61,23 +61,19 @@ $(document).ready(function() {
 		navigationPosition: 'left',
 		navigationTooltips: ['Intro', '드림캐처', '모아두', '봉정동', 'Contact'] */
 	});
-});
 
-$(window).load(function(){
-	
-	//bgm 볼륨 조절
-	document.getElementById("starwarsOST").volume = 0.2;
-	//첫 화면이 intro이면 BGM 재생
-	if(currSection == "intro"){
-		document.getElementById("starwarsOST").play();
-	}
-	
-	//////////////////// 화살표 ////////////////////
 	//왼쪽 화살표 삭제
 	$(".fp-prev").remove();
 	
-	//페이지 로드 시 화살표에 class, style, text 추가
-	$(".fp-next").addClass(">>>>>").css("transform","rotate(45deg)").append("<span class='arrowText'></span>");
+	//화살표에 class, style, text 추가
+	$(".fp-next").addClass(">>>>>").css("transform","rotate(45deg)");
+	
+	
+	
+	
+	/*======================
+	 * after dom ready
+	 * ===================*/
 	
 	//섹션,슬라이드 배경을 클릭했을때
 	$(".section .slide").on("click", function() {
@@ -90,35 +86,16 @@ $(window).load(function(){
 		rotateArrow(arrow, "angle"+currSectionNum, currSectionNum);
 	});
 
-	//섹션1,2 화살표 마우스오버 시 텍스트 변경
-	var arrowText = $(".arrowText");
-	$(".fp-next").hover(
-			function() {
-				if (currSlide == 0) {
-					arrowText.html("View<br>detail");
-				} else {
-					arrowText.html("Go<br>back");
-				}
-				;
-				arrowText.fadeIn();
-			}, function() {
-				arrowText.fadeOut();
-			});
-	
 	//'클릭하시오' 이미지 제거
 	$(".fp-next").on("click", function() {
 		arrowText.fadeOut("fast");
 	});
+	
+	//블록네비게이션 첫 액티브 지정
+	$("#nav-intro .nav-block").addClass("active");
 
-	
-	
-	//////////////////// 네비게이션 ////////////////////
-	
-	//페이지 로드 후 첫 액티브 지정
-	$("#nav_Intro .block").addClass("active");
-
-	//마우스오버 css효과
-	$("#blockNavigation .area").hover(
+	//블록네비게이션 마우스오버 css효과
+	$("#blockNavigation .nav-area").hover(
   			function() {
   				$(this).find(".block").addClass("hover");
   			},
@@ -146,7 +123,50 @@ $(window).load(function(){
 	//body의 className 변경으로 페이지 이동을 감지하고, 모션 조작
 	addClassNameListener("body");
 	
+
+	/*======스타워즈======*/
+	starwars();
+	
+	//bgm 볼륨 조절
+	document.getElementById("starwarsOST").volume = 0.2;
+
 });
+
+
+/*======스타워즈======*/
+var size = 3;
+var posY = 230; 
+var ang = 55;
+var delta = 0.8;
+var scaleDelta = 0.008;
+var speed = 50;
+var agent = navigator.userAgent.toLowerCase();
+
+function starwars(){
+	size = size - scaleDelta;
+	posY = posY -delta;
+	if(posY<80){
+		delta = 0.4;
+		scaleDelta = 0.006; 
+	}
+	if(posY<40){
+		delta = 0.2;			 	
+		scaleDelta = 0.003; 
+	}
+	if(posY<20){
+		delta = 0.1;
+		scaleDelta = 0.001; 
+	}
+
+	$(".starwars-intro").css({"top" : posY + "%", "transform" : "rotateX(" + ang + "deg) scale(" + size + ")"})
+
+	if(posY> -30){
+		setTimeout(starwars,speed);	
+	}else{
+		$(".starwars-intro").animate({opacity:"0"},500);
+	}
+}
+/*======스타워즈 끝======*/
 
 
 function addClassNameListener(elemId) {
@@ -250,3 +270,4 @@ function rotateArrow(arrow, angle, section) {
 		arrow.addClass(">>>>>");
 	} 
 }
+

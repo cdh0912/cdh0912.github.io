@@ -132,7 +132,7 @@ to { transform: rotate(375deg) }
 
 
 /* =================================
-usable
+kit
 =============================== */
 *:focus {outline:none !important;}
 
@@ -209,8 +209,72 @@ usable
 	box-shadow: 0px 0px 7px 7px rgba(255, 255, 255, 0.4);
 }
 
+/* 수직정렬 새로알게 된 것 */
+.vertical-align {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}	
+
 /* =================================
-공통
+스타워즈
+=============================== */
+.starwars-page {
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	perspective: 500px;
+	overflow: hidden;
+	text-align: center;
+	font-size: 16px;
+	font-family: impact;
+	font-weight: 500;
+	position: absolute;
+}
+.starwars-intro {
+	top: 0%;
+	margin: auto;
+	width: 100%;
+	max-width: 600px;
+	position: relative;
+	font-size: 1.8em;
+	color: #e8be1e;
+	text-align: justify;
+	transform: rotateX(30deg) scale(2);
+}
+.starwars-intro h1 {
+	font-size: 2em;
+	text-align: center;
+}
+#audioUse {
+	position: absolute;
+	top: 15px;
+	left: 50%;
+	margin-left: -13px;
+	color: #fff;
+	font-size: 30px;
+}
+#audioBox {
+	opacity: 0;
+	position: absolute;
+	top: 19px;
+	width: 100%;
+	transition: 0.5s ease;
+}
+#audioBox:hover {
+	opacity: 1;
+}
+audio {
+	width: 30%;
+}
+
+
+/* =================================
+공용
 =============================== */
 body {
 	font-family: "Jeju Gothic", serif;
@@ -224,7 +288,6 @@ h1 {
 	color: #fff;
 	margin:0;
 }
-
 .decription {
 	display: table-cell;
 	vertical-align: middle;
@@ -255,13 +318,11 @@ header:hover {
 	left: 13px;
 	background: rgba(0, 0, 0, 0.5) !important;
 }
-
 header a {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 }
-
 header #logo {
 	position: fixed;
 	width: 45px;
@@ -273,8 +334,6 @@ header #logo {
 	background-image: url("../imgs/logo_side_white.png");
 	border-radius: 50%;
 }
-
-
 
 /* 슬라이드 화살표 */
 .fp-controlArrow.fp-prev {
@@ -314,7 +373,6 @@ header #logo {
 	color: #fff;
 }
 
-
 /* 블럭 네비게이션 */
 #blockNavigation {
 	width: 52px;
@@ -328,13 +386,13 @@ header #logo {
 	border-radius: 11px;
 	z-index: 999;
 }
-#blockNavigation .area {
+#blockNavigation .nav-area {
 	float: left;
 	width: 12px;
 	height:12px;
 	margin: 6px;
 }
-#blockNavigation .block {
+#blockNavigation .nav-block {
 	display: block;
 	width: 4px;
 	height:4px;
@@ -346,17 +404,16 @@ header #logo {
 	transition: all 0.1s ease-in-out;
 	box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
 }
-#blockNavigation .active {
+#blockNavigation .nav-active {
 	width: 12px !important;
 	height:12px !important;
 	margin: 0px !important;
 }
-#blockNavigation .hover {
+#blockNavigation .nav-hover {
 	width: 10px;
 	height:10px;
 	margin: 1px;
 }
-
 
 /* 클릭이미지 */
 .clickImg {
@@ -372,19 +429,13 @@ header #logo {
 }
 
 /* iframe */
-iframe {
+#example-iframe {
 	width: calc(100% - 20px);
 	height: calc(100% - 20px);
 	border: 0px;
 	margin: 10px;
 }
-#section3 #slide2 iframe {
-	background-color: rgb(189, 66, 125);
-}
-#section4 #slide2 iframe {
-	background-color: rgb(52, 73, 94);
-}
-#dc_openImg, #moa_openImg {
+.openImg {
 	position: absolute;
 	top: 10px;
 	right: 10px;
@@ -392,10 +443,20 @@ iframe {
 	height: calc(100% - 20px);
 	background-color: rgba(0,0,0,0.5);
 }
+#section1 #example-iframe {
+	background-color: #22aba6;
+}
+#section2 #example-iframe {
+	background-color: #4a90e2;
+}
+#section3 #example-iframe {
+	background-color: #bd427d;
+}
+#section4 #example-iframe {
+	background-color: #34495e;
+}
 
-
-
-/* 페이지 배경 */
+/* 페이지 */
 .section {
 	height: 100% !important;
 	text-align:center;
@@ -440,64 +501,9 @@ iframe {
 }
 .pattern-overlay {
 	display: table;
-	position: absolute;
-	top: 0;
-	left: 0;
 	width: 100%;
 	height: 100%;
 	background-image: url("../imgs/pattern-overlay.png");
 	background-repeat: repeat;
 	background-attachment: scroll;
-}
-.starwars-page {
-	margin: auto;
-	width: 100%;
-	height: 100%;
-	bottom: 0;
-	perspective: 500px;
-	overflow: hidden;
-	text-align: center;
-	font-size: 16px;
-	font-family: impact;
-	font-weight: 500;
-	position: absolute;
-}
-
-.starwars-intro {
-	top: 0%;
-	margin: auto;
-	width: 100%;
-	max-width: 600px;
-	position: relative;
-	font-size: 1.8em;
-	color: #e8be1e;
-	text-align: justify;
-	transform: rotateX(30deg) scale(2);
-}
-
-.starwars-intro h1 {
-	font-size: 2em;
-	text-align: center;
-}
-
-#audioUse {
-	position: absolute;
-	top: 15px;
-	left: 50%;
-	margin-left: -13px;
-	color: #fff;
-	font-size: 30px;
-}
-#audioBox {
-	opacity: 0;
-	position: absolute;
-	top: 19px;
-	width: 100%;
-	transition: 0.5s ease;
-}
-#audioBox:hover {
-	opacity: 1;
-}
-audio {
-	width: 30%;
 }
