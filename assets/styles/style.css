@@ -203,6 +203,18 @@ kit
     background: transparent;
 }
  */
+ 
+h1, h3, p, button, input, textarea, br, img {
+	-ms-user-select: none; 
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+h1, h3, p {
+    cursor: default;
+}
+
 /* 로딩애니메이션 */
 .spinner {
 	position: fixed;

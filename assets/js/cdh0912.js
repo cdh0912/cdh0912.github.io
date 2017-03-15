@@ -82,19 +82,19 @@ $(document).ready(function() {
 	
 	//모바일 체크
 	var filter = "win16|win32|win64|mac";
-	var mobile = false;
+	var enterInMobile = false;
 	if(navigator.platform){
 		if(0 > filter.indexOf(navigator.platform.toLowerCase())){
-			mobile = true;
+			enterInMobile = true;
 		}
 	}
 	
 	//audio 볼륨 0.2로 세팅. 500ms후에도 intro이면 재생
-	var starwarsOST = document.getElementById("starwarsOST");
-	starwarsOST.volume = 0.2;
-	if(mobile && currSection == "intro"){
-		starwarsOST.play();
-		alert("모바일입니다");
+	document.getElementById("starwarsOST").volume = 0.2;
+	
+	if(enterInMobile && currSection == "intro"){
+		var audio = new Audio("assets/files/starwars-ost-short.mp3");
+		audio.play();
 	}
 	
 	//mail  form
