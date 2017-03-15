@@ -693,7 +693,7 @@
         * Creates the control arrows for the given section
         */
         function createSlideArrows(section){
-            section.find(SLIDES_WRAPPER_SEL).after('<div class="' + SLIDES_ARROW_PREV + '"></div><div class="' + SLIDES_ARROW_NEXT + '"></div>');
+            section.find(SLIDES_WRAPPER_SEL).after('<div class="' + SLIDES_ARROW_NEXT + '" data-angle="45" style="transform:rotate(45deg)"></div>');
 
             if(options.controlArrowColor!='#fff'){
                 section.find(SLIDES_ARROW_NEXT_SEL).css('border-color', 'transparent transparent transparent '+options.controlArrowColor);
@@ -1652,14 +1652,25 @@
          */
         $(SECTION_SEL).on('click touchstart', SLIDES_ARROW_SEL, function() {
             var section = $(this).closest(SECTION_SEL);
+           
+            var arrow = $(this);
+            var angle = arrow.data("angle");
 
             if ($(this).hasClass(SLIDES_PREV)) {
                 if(isScrollAllowed.m.left){
                     FP.moveSlideLeft(section);
+                    
+                    angle = angle + 180; //180도 +
+                    arrow.data("angle", angle); //새 값 저장
+            		arrow.css({"transform":"rotate(" + angle + "deg)", "right": "4px"}); //180도 회전
                 }
             } else {
                 if(isScrollAllowed.m.right){
                     FP.moveSlideRight(section);
+                    
+                    angle = angle + 180; //180도 +
+                    arrow.data("angle", angle); //새 값 저장
+                    arrow.css({"transform":"rotate(" + angle + "deg)", "right": "14px"}); //180도 회전
                 }
             }
         });

@@ -68,31 +68,6 @@ assets/js/prefixfree.min.js 라이브러리 사용
 	src: local("brandon-grotesque"), url("../fonts/brandongrotesque-black-webfont.ttf") format("truetype");
 }
 
-/* 로딩애니메이션 */
-.spinner {
-	position: fixed;
-	width: 100%;
-	height: 100vh;
-	padding-top: calc(50vh - 29px);
-	text-align: center;
-	overflow: auto;
-	z-index: 9999;
-	background-color: rgba(0,0,0,0.9);
-}
-.spinner > div {
-	width: 18px;
-	height: 18px;
-	background-color: #fff;
-	border-radius: 100%;
-	display: inline-block;
-	animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-}
-.spinner .bounce1 {
-	animation-delay: -0.32s;
-}
-.spinner .bounce2 {
-	animation-delay: -0.16s;
-}
 @-webkit-keyframes sk-bouncedelay {
 	0%, 80%, 100% { -webkit-transform: scale(0) }
 	40% { -webkit-transform: scale(1.0) }
@@ -219,63 +194,41 @@ kit
 	transform-style: preserve-3d;
 }	
 
-/* =================================
-스타워즈
-=============================== */
-.starwars-page {
-	margin: auto;
-	width: 100%;
-	height: 100%;
-	bottom: 0;
-	perspective: 500px;
-	overflow: hidden;
-	text-align: center;
-	font-size: 16px;
-	font-family: impact;
-	font-weight: 500;
-	position: absolute;
-}
-.starwars-intro {
-	top: 0%;
-	margin: auto;
-	width: 100%;
-	max-width: 600px;
-	position: relative;
-	font-size: 1.8em;
-	color: #e8be1e;
-	text-align: justify;
-	transform: rotateX(30deg) scale(2);
-}
-.starwars-intro h1 {
-	font-size: 2em;
-	text-align: center;
-}
-#audioUse {
-	position: absolute;
-	top: 15px;
-	left: 50%;
-	margin-left: -13px;
-	color: #fff;
-	font-size: 30px;
-}
-#audioBox {
-	opacity: 0;
-	position: absolute;
-	top: 19px;
-	width: 100%;
-	transition: 0.5s ease;
-}
-#audioBox:hover {
-	opacity: 1;
-}
-audio {
-	width: 30%;
-}
 
 
 /* =================================
 공용
 =============================== */
+/* ::selection {
+    background: transparent;
+}
+ */
+/* 로딩애니메이션 */
+.spinner {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	padding-top: calc(50vh - 29px);
+	text-align: center;
+	overflow: auto;
+	z-index: 9999;
+	background-color: rgba(0,0,0,0.9);
+}
+.spinner > div {
+	width: 18px;
+	height: 18px;
+	background-color: #fff;
+	border-radius: 100%;
+	display: inline-block;
+	animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+.spinner .bounce1 {
+	animation-delay: -0.32s;
+}
+.spinner .bounce2 {
+	animation-delay: -0.16s;
+}
+
 body {
 	font-family: "Jeju Gothic", serif;
 	background: #fff;
@@ -303,8 +256,8 @@ header {
 	position: fixed;
 	width: 55px;
 	height: 55px;
-	top: 7px;
-	left: 7px;
+	top: 17px;
+	left: 17px;
 	border-radius: 100%;
 	z-index: 999;
 	transition: 0.2s ease;
@@ -314,8 +267,8 @@ header {
 header:hover {
 	width: 43px;
 	height: 43px;
-	top: 13px;
-	left: 13px;
+	top: 23px;
+	left: 23px;
 	background: rgba(0, 0, 0, 0.5) !important;
 }
 header a {
@@ -327,8 +280,8 @@ header #logo {
 	position: fixed;
 	width: 45px;
 	height: 45px;
-	top: 12px;
-	left: 12px;
+	top: 22px;
+	left: 22px;
 	transition: 0.6s ease;
 	background-size: contain;
 	background-image: url("../imgs/logo_side_white.png");
@@ -347,6 +300,7 @@ header #logo {
 	border-top: 6px solid #fff;
 	border-right: 6px solid #fff;
 	border-radius: 1px;
+	box-shadow: inset -5px 5px 0px -1px rgba(0, 0, 0, 0.5);
 }
 .fp-controlArrow {
 	top: 53.2%;
@@ -416,11 +370,9 @@ header #logo {
 }
 .pl24 {
 	padding-left: 24px;
-	padding-right: 0px;
 }
 .pl0 {
 	padding-left: 0px;
-	padding-right: 13px;
 }
 #blockNavigation> div {
     display: inline-block;
@@ -511,6 +463,10 @@ header #logo {
 #section4 #slide1 {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)), url("../imgs/bg_moado.png");
 }
+#section5 {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)), url("../imgs/typingcat.gif");
+	background-position: 50% 74%;
+}
 .pattern-overlay {
 	display: table;
 	width: 100%;
@@ -518,4 +474,109 @@ header #logo {
 	background-image: url("../imgs/pattern-overlay.png");
 	background-repeat: repeat;
 	background-attachment: scroll;
+}
+
+
+/* =================================
+스타워즈
+=============================== */
+.starwars-page {
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	perspective: 500px;
+	overflow: hidden;
+	text-align: center;
+	font-size: 16px;
+	font-family: impact;
+	font-weight: 500;
+	position: absolute;
+}
+.starwars-intro {
+	top: 0%;
+	margin: auto;
+	width: 100%;
+	max-width: 600px;
+	position: relative;
+	font-size: 1.8em;
+	color: #e8be1e;
+	text-align: justify;
+	transform: rotateX(30deg) scale(2);
+}
+.starwars-intro h1 {
+	font-size: 2em;
+	text-align: center;
+}
+#audioUse {
+	position: absolute;
+	top: 15px;
+	left: 50%;
+	margin-left: -13px;
+	color: #fff;
+	font-size: 30px;
+}
+#audioBox {
+	opacity: 0;
+	position: absolute;
+	top: 19px;
+	width: 100%;
+	transition: 0.5s ease;
+}
+#audioBox:hover {
+	opacity: 1;
+}
+audio {
+	width: 30%;
+}
+
+
+/* =================================
+모달
+=============================== */
+.md-button {
+    display: inline-block;
+	min-width: 85px;
+    margin: 6px 2px 11px;
+    padding: 0.6em 1.2em;
+    background: #c0392b;
+    color: #fff;
+    font-family: "Jeju Gothic";
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+	border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.md-trigger {
+	font-size: 1em;
+    margin-top: 28px;
+}
+.md-close {
+    background: #e74c3c;
+}
+.md-input {
+	width: 100%;
+    margin: 5px 0;
+    padding: 6px 8px;
+    color: #fff;
+    font-size: 0.9em;
+    font-family: "Jeju Gothic";
+    border: 1px solid #fff;
+    border-radius: 0px;
+    background: transparent;
+}
+.md-input::-webkit-input-placeholder { color: #fff; }
+.md-textarea {
+    resize: none;
+}
+.md-textarea::-webkit-scrollbar {
+    width: 14px;
+    background-color: #e74c3c;
+}
+.md-textarea::-webkit-scrollbar-thumb {
+    background-color: #f0f0f0;
+    border: 4px solid #e74c3c;
+    border-radius: 8px;
 }
