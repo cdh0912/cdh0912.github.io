@@ -92,10 +92,10 @@ $(document).ready(function() {
 	//audio 볼륨 0.2로 세팅. 500ms후에도 intro이면 재생
 	document.getElementById("starwarsOST").volume = 0.2;
 	
-	if(enterInMobile && currSection == "intro"){
+	/*if(enterInMobile && currSection == "intro"){
 		var audio = new Audio("assets/files/starwars-ost-short.mp3");
 		audio.play();
-	}
+	}*/
 	
 	//mail  form
 	var $contactForm = $('#contact-form');
