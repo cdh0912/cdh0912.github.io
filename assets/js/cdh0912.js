@@ -121,7 +121,7 @@ $(document).ready(function() {
 	});
 	
 	//모달 팝업 시 body의 스크롤 동작 X
-	$("body").on("click", ".md-trigger, .md-overlay", function(){
+	$("body").on("click", ".md-trigger, .md-overlay, .md-close", function(){
 		if( $(".md-modal").hasClass("md-show") ){
 			$("body").on("scroll touchmove mousewheel", function(e) {
 				e.preventDefault();
