@@ -80,6 +80,14 @@ $(document).ready(function() {
 	//스타워즈 애니메이션 시작
 	starwars();
 	
+	var starwarsOST = document.getElementById("starwarsOST");
+	starwarsOST.volume = 0.2; //audio 볼륨 0.2로 세팅
+	setTimeout(function () {      
+		if (currSection == "intro") {
+			starwarsOST.play(); //audio play
+		}
+	}, 1000);
+	
 	//모바일 체크
 	var filter = "win16|win32|win64|mac";
 	var enterInMobile = false;
@@ -88,14 +96,6 @@ $(document).ready(function() {
 			enterInMobile = true;
 		}
 	}
-	
-	//audio 볼륨 0.2로 세팅. 500ms후에도 intro이면 재생
-	document.getElementById("starwarsOST").volume = 0.2;
-	
-	/*if(enterInMobile && currSection == "intro"){
-		var audio = new Audio("assets/files/starwars-ost-short.mp3");
-		audio.play();
-	}*/
 	
 	//mail  form
 	var $contactForm = $('#contact-form');
@@ -231,6 +231,9 @@ function addClassNameListener(elemId) {
 			/*==== section 이동 시 효과 ====*/
 			if( currSection == sectionNameArr[0]) {
 				$("header #logo").addClass("boxshadow-white");
+				
+				//audio 재생
+				document.getElementById("starwarsOST").play();
 			} else {
 				$("header #logo").removeClass("boxshadow-white");
 				
