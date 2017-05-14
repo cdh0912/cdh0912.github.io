@@ -183,6 +183,15 @@ kit
 .boxshadow-white {
 	box-shadow: 0px 0px 7px 7px rgba(255, 255, 255, 0.4);
 }
+.text-center {
+	text-align: center;	
+}
+.text-left {
+	text-align: left;	
+}
+.text-right {
+	text-align: right;	
+}
 
 /* 수직정렬 새로알게 된 것 */
 .vertical-align {
@@ -200,7 +209,7 @@ kit
 공용
 =============================== */
 /* ::selection {
-    background: transparent;
+	background: transparent;
 }
  */
  
@@ -212,7 +221,7 @@ h1, h3, p, button, input, textarea, br, img {
 	user-select: none;
 }
 h1, h3, p {
-    cursor: default;
+	cursor: default;
 }
 
 /* 로딩애니메이션 */
@@ -387,8 +396,8 @@ header #logo {
 	padding-left: 0px;
 }
 #blockNavigation> div {
-    display: inline-block;
-    transition: all 0.2s ease-in-out;
+	display: inline-block;
+	transition: all 0.2s ease-in-out;
 }
 
 /* 클릭이미지 */
@@ -438,8 +447,8 @@ header #logo {
 	text-align:center;
 }
 .slide {
-    position: relative;
-    z-index: 1;
+	position: relative;
+	z-index: 1;
 }
 .section, .slide {
 	transition: 0.8s ease;
@@ -461,7 +470,9 @@ header #logo {
 	filter: blur(3px);
 }
 #section0 {
-	background-image: url("../imgs/galaxy.jpg");
+	background-image: url("../imgs/twinkle_stars.gif");
+	background-repeat: repeat;
+	background-size: initial;
 }
 #section1 #slide1 {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)), url("../imgs/bg_fandream.png");
@@ -492,29 +503,50 @@ header #logo {
 /* =================================
 스타워즈
 =============================== */
+@keyframes starwars-scroll {
+	0% { top: 100%; }
+	100% { top:-250%; }
+}
 .starwars-page {
-	margin: auto;
-	width: 100%;
-	height: 100%;
-	bottom: 0;
-	perspective: 500px;
-	overflow: hidden;
-	text-align: center;
-	font-size: 16px;
-	font-family: impact;
-	font-weight: 500;
 	position: absolute;
+	width: 100%;
+	height: 300%;
+	bottom: 0;
+	left: 50%;
+	margin-left: -50%;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: impact;
+	text-align: justify;
+	overflow: hidden;
+	transform-origin: 50% 96%;
+	transform: perspective(300px) rotateX(24deg);
+	background: transparent;
+}
+.starwars-page:after {
+	position: absolute;
+	content: ' ';
+	top: 0;
+	width: 100%;
+	height: 50%;
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+	background-image: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+	background-image: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+	background-image: -o-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+	background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+	pointer-events: none;
+	z-index: 999;
 }
 .starwars-intro {
-	top: 0%;
+	top: 100%;
 	margin: auto;
-	width: 100%;
-	max-width: 600px;
+	max-width: 1000px;
 	position: relative;
-	font-size: 1.8em;
+	font-size: 50px;
+	line-height: 1.4em;
 	color: #e8be1e;
 	text-align: justify;
-	transform: rotateX(30deg) scale(2);
+	animation: starwars-scroll 170s linear 4s infinite;
 }
 .starwars-intro h1 {
 	font-size: 2em;
@@ -547,48 +579,48 @@ audio {
 모달
 =============================== */
 .md-button {
-    display: inline-block;
+	display: inline-block;
 	min-width: 85px;
-    margin: 8px 2px 4px;
-    padding: 0.6em 1.2em;
-    background: #c0392b;
-    color: #fff;
-    font-family: "Jeju Gothic";
-    font-size: 0.8em;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+	margin: 8px 2px 4px;
+	padding: 0.6em 1.2em;
+	background: #c0392b;
+	color: #fff;
+	font-family: "Jeju Gothic";
+	font-size: 0.8em;
+	letter-spacing: 1px;
+	text-transform: uppercase;
 	border: none;
-    border-radius: 2px;
-    cursor: pointer;
+	border-radius: 2px;
+	cursor: pointer;
 }
 .md-trigger {
 	font-size: 1.3em;
-    margin-top: 27px;
+	margin-top: 27px;
 }
 .md-close {
-    background: #e74c3c;
+	background: #e74c3c;
 }
 .md-input {
 	width: 460px;
-    margin: 5px 0;
+	margin: 5px 0;
 	padding: 10px;
-    color: #fff;
+	color: #fff;
    	font-size: 0.8em;
-    font-family: "Jeju Gothic";
-    border: 1px solid #fff;
-    border-radius: 0px;
-    background: transparent;
+	font-family: "Jeju Gothic";
+	border: 1px solid #fff;
+	border-radius: 0px;
+	background: transparent;
 }
 .md-input::-webkit-input-placeholder { color: #fff; }
 .md-textarea {
-    resize: none;
+	resize: none;
 }
 .md-textarea::-webkit-scrollbar {
-    width: 14px;
-    background-color: #e74c3c;
+	width: 14px;
+	background-color: #e74c3c;
 }
 .md-textarea::-webkit-scrollbar-thumb {
-    background-color: #f0f0f0;
-    border: 4px solid #e74c3c;
-    border-radius: 8px;
+	background-color: #f0f0f0;
+	border: 4px solid #e74c3c;
+	border-radius: 8px;
 }

@@ -77,9 +77,6 @@ $(document).ready(function() {
 	//body의 className 변경으로 페이지 이동을 감지하고, 모션 조작
 	addClassNameListener("body");
 	
-	//스타워즈 애니메이션 시작
-	starwars();
-	
 	var starwarsOST = document.getElementById("starwarsOST");
 	starwarsOST.volume = 0.2; //audio 볼륨 0.2로 세팅
 	setTimeout(function () {      
@@ -135,47 +132,6 @@ $(document).ready(function() {
 	
 	
 });
-
-
-/*======스타워즈======*/
-var size = 3;
-var posY = 250; 
-var ang = 55;
-var delta = 0.8;
-var scaleDelta = 0.008;
-var speed = 50;
-var agent = navigator.userAgent.toLowerCase();
-
-function starwars(){
-	size = size - scaleDelta;
-	posY = posY -delta;
-	if(posY < 80){
-		delta = 0.4;
-		scaleDelta = 0.004; 
-	}
-	if(posY < 40){
-		delta = 0.2;			 	
-		scaleDelta = 0.002; 
-	}
-	if(posY < 20){
-		delta = 0.1;
-		scaleDelta = 0.001; 
-	}
-	if(posY < -20){
-		delta = 0.07;
-		scaleDelta = 0.001; 
-	}
-
-	$(".starwars-intro").css({"top" : posY + "%", "transform" : "rotateX(" + ang + "deg) scale(" + size + ")"})
-
-	if(posY > -40){
-		setTimeout(starwars,speed);	
-	} else {
-		$(".starwars-intro").animate({opacity:"0"},500);
-	}
-}
-/*======스타워즈 끝======*/
-
 
 
 function addClassNameListener(elemId) {
