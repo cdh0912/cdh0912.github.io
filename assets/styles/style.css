@@ -351,7 +351,6 @@ header #logo {
 /* 블럭 네비게이션 */
 #blockNavigation {
 	width: 74px;
-	height: 168px;
 	position: fixed;
 	top: 50%;
 	left: 20px;

@@ -1,4 +1,4 @@
-var sectionNameArr = ['intro', 'fandream', 'univue', 'dreamcatcher', 'moado', 'contact'];
+var sectionNameArr = [];
 var angle1 = +45;
 var angle2 = +45;
 var angle3 = +45;
@@ -15,10 +15,12 @@ var slides = $(".slide");
 
 $(document).ready(function() {
 
-	
 	/*======================
 	 * init
 	 * ===================*/
+	for(var i=0; i<sections.length; i++) {
+        sectionNameArr.push(sections.eq(i).data('sectionName'));
+	}
 
 	//에러페이지
 	window.onerror = function() {
