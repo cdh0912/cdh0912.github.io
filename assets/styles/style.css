@@ -519,7 +519,7 @@ header #logo {
 	text-align: justify;
 	overflow: hidden;
 	transform-origin: 50% 96%;
-	transform: perspective(300px) rotateX(24deg);
+	transform: perspective(300px) rotateX(24deg) translateZ(-30px);
 	background: transparent;
 }
 .starwars-page:after {
